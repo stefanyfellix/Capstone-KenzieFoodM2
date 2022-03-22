@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./../../../public/css/reset.css">
+  <link rel="stylesheet" href="./../../../public/css/global.css">
+  <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+
+  <div class="modal--wrapper hidden">
+
+    <h2 class="modal--title">Cadastro de produto</h2>
+    <form id="registerProductForm" action="submit" type="POST" class="modal">
+      <label for="productName">Nome do produto</label>
+      <input type="text" name="nome" id="productName" placeholder="Digitar o nome">
+      <label for="productDescription">Descrição</label>
+      <input type="text" name="descricao" id="productDescription" placeholder="Digitar a descrição">
+      <label for="productCategory">Categorias
+        <div class="categoryButtons">
+          <input type="button" name="categoria" value="Panificadora">
+          <input type="button" name="categoria" value="Frutas">
+          <input type="button" name="categoria" value="Bebidas">
+        </div>
+      </label>
+      <label for="productPrice">Valor do produto</label>
+      <input type="number" name="preco" id="productPrice" placeholder="Digite o valor aqui">
+      <label for="productImage">Link da imagem</label>
+      <input type="url" name="imagem" id="productImage" placeholder="Inserir link">
+
+      <button type="submit" id="submitProductInfo">Cadastrar Produto</button>
+    </form>
+
+  </div>
+
+  <script type="module" src="./../../public/scripts/script.js"></script>
+</body>
+
+</html>

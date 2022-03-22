@@ -1,4 +1,4 @@
-import { ApiProduct } from "./../../src/models/apiProduct.js"
+import { ApiProductPrivate } from "./../../src/models/ApiProductPrivate.js"
 import { ApiAuthentication } from "./../../src/models/apiAuthentication.js"
 
 
@@ -19,7 +19,7 @@ const registerNewProduct = (event) => {
   }
 
   if (productValues.preco > 0) {
-    ApiProduct.register('/my/products', productValues, token)
+    ApiProductPrivate.create('/my/products', productValues, token)
   } window.alert("Preço deve ser maior que 0")
 }
 

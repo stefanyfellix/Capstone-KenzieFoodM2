@@ -1,0 +1,148 @@
+body{
+  height: 100vh;
+  background-color: var(--grey-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal--wrapper{
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  height: 95%;
+
+  background-color: #fff;
+  border-radius: 8px 8px 8px 8px;
+  margin: 0 auto;
+}
+
+.modal--title{
+  font-family: var(--body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  border-radius: 8px 8px 0px 0px;
+  background-color: var(--grey-1);
+}
+
+#submitProductInfo{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+
+  margin: 20px 10px 0 10px;
+  padding: 15px 20px;
+  border-radius: 32px;
+  border: 1.5px solid var(--color-primary);
+
+  font-family: var(--font-secondary);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--big-font-size);
+}
+
+.modal--wrapper > form{
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-secondary);
+  font-size: var(--normal-font-size);
+}
+
+.modal--wrapper > form > input{
+  border-radius: 12px;
+  height: 2.25rem;
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-2);
+  color: var(--grey-3);
+  margin: 0 10px;
+}
+
+.modal--wrapper > form > input:nth-child(4){
+  height: 4rem;
+}
+
+.modal--wrapper > form > input::placeholder{
+  font-size: var(--normal-font-size);
+  padding-left: 15px;
+}
+
+.categoryButtons > input{
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-1);
+  border-radius: 32px;
+  padding: 11px 10px;
+
+  color: var(--grey-3);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+label{
+  padding: 10px 15px;
+}
+
+.hidden{
+  display: none;
+}
+
+@media screen and (min-width: 768px){
+  .modal--wrapper{
+    width: 60%;
+    height: 90%;
+  }
+
+  .modal--wrapper > form > input{
+    margin: 10px 15px 20px;
+    height: 3rem;
+  }
+
+  .modal--wrapper > form > input:nth-child(4){
+    height: 5rem;
+  }
+
+  .categoryButtons > input{
+    margin-top: 10px;
+  }
+
+  #submitProductInfo{
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .modal--wrapper{
+    height: 90%;
+    width: 40%;
+  }
+
+  .modal--wrapper > form > input{
+    margin: 0px 30px 10px;
+  }
+
+  .modal--wrapper > form > input:nth-child(4){
+    height: 4rem;
+  }
+
+  label, #submitProductInfo{
+    margin: 0 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal--wrapper > form > input{
+    margin: 0px 30px 20px;
+  }
+
+  .modal--wrapper > form > input:nth-child(4){
+    height: 5rem;
+  }
+
+  #submitProductInfo{
+    margin-top: 30px;
+  }
+}
