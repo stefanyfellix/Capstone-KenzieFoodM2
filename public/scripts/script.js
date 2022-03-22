@@ -1,5 +1,16 @@
 import { UserInteraction } from './../../src/controllers/userInteraction.js'
+import { InterfaceDashboard } from '../../src/controllers/interfaceDashboard.js'
 
+
+//Testes
+const callRegisterModal = document.getElementById('registerButton')
+const callEditProductModal = document.getElementById('editProductButton')
+
+callRegisterModal.addEventListener('click', InterfaceDashboard.registerModal)
+callEditProductModal.addEventListener('click', InterfaceDashboard.editProductModal)
+
+
+//Código a ser usado
 const registerProductForm = document.querySelector('#registerProductForm')
 const deleteProductButton = document.querySelector('#deleteProduct')
 const editProductForm = document.querySelector('#editProductForm')
@@ -17,7 +28,6 @@ Panificadora.addEventListener('click', (event) => {
   Panificadora.classList.add('active')
   Frutas.classList.remove('active')
   Bebidas.classList.remove('active')
-
 })
 
 Frutas.addEventListener('click', (event) => {
@@ -33,3 +43,4 @@ Bebidas.addEventListener('click', (event) => {
   Panificadora.classList.remove('active')
   Frutas.classList.remove('active')
 })
+
