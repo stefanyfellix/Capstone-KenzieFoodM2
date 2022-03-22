@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root{
+  /* Cores */
+  --color-primary: #FF2253;
+  --color-primary-59: #FFE9EE;
+  --color-secondary: #4ACA94;
+  --color-secondary-50: #E4F7EF;
+
+  --product-1: #EEF6FF;
+  --product-2: #FFF7F4;
+  --product-3: #FFE4EA;
+  --product-4: #F3EEF5;
+
+  --grey-4: #212529;
+  --grey-3: #868E96;
+  --grey-2: #E9ECEF;
+  --grey-1: #F8F9FA;
+
+  /* Tipografia */
+  --body-font: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  --big-font-size: 1rem;
+  --normal-font-size: .875rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .625rem;
+  
+  --font-regular: 400;
+  --font-semi-bold: 500;
+  --font-bold: 700;
+}
