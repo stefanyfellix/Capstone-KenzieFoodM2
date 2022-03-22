@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "ApiAuthentication",
         "ApiProductPublic",
-        "ApiProductPrivate"
+        "ApiProductPrivate",
+        "ApiCart"
     ]
 }
