@@ -1,5 +1,7 @@
 {
     "conventionalCommits.scopes": [
-        "ApiAuthentication"
+        "ApiAuthentication",
+        "ApiProductPublic",
+        "ApiProductPrivate"
     ]
 }
