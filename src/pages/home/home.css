@@ -31,7 +31,14 @@ body{
   background-color: var(--grey-1);
 }
 
-#submitProductInfo{
+span{
+  display: flex;
+  justify-content: center;
+}
+
+#submitProductInfo, 
+#saveProductChange, 
+#deleteProduct{
   background-color: var(--color-primary);
   color: var(--grey-1);
 
@@ -43,6 +50,18 @@ body{
   font-family: var(--font-secondary);
   font-weight: var(--font-semi-bold);
   font-size: var(--big-font-size);
+
+  cursor: pointer;
+}
+
+#submitProductInfo{
+  align-self: center;
+}
+
+#deleteProduct{
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-1);
+  color: var(--grey-3);
 }
 
 .modal--wrapper > form{
@@ -53,25 +72,39 @@ body{
   font-size: var(--normal-font-size);
 }
 
-.modal--wrapper > form > input{
+.modal--wrapper > form > textarea{
+  resize: none;
+  overflow: hidden;
+  font-family: var(--font-secondary);
+  height: 100px;
+}
+
+.modal--wrapper > form > textarea::placeholder{
+  font-size: var(--normal-font-size);
+}
+
+.modal--wrapper > form > input,
+.modal--wrapper > form > textarea{
   border-radius: 12px;
   height: 2.25rem;
   background-color: var(--grey-1);
   border: 1.5px solid var(--grey-2);
   color: var(--grey-3);
   margin: 0 10px;
+  padding: 15px;
 }
 
-.modal--wrapper > form > input:nth-child(4){
-  height: 4rem;
+.modal--wrapper > form > input:focus,
+.modal--wrapper > form > textarea:focus{
+  background-color: #fff;
+  color: var(--grey-4);
 }
 
 .modal--wrapper > form > input::placeholder{
   font-size: var(--normal-font-size);
-  padding-left: 15px;
 }
 
-.categoryButtons > input{
+.category--button{
   background-color: var(--grey-1);
   border: 1.5px solid var(--grey-1);
   border-radius: 32px;
@@ -80,6 +113,18 @@ body{
   color: var(--grey-3);
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi-bold);
+
+  cursor: pointer;
+}
+
+.category--button:focus{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+}
+
+.active{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
 }
 
 label{
@@ -90,13 +135,19 @@ label{
   display: none;
 }
 
+.wrong--price{
+  color: var(--color-primary);
+  margin:3px 20px 10px;
+}
+
 @media screen and (min-width: 768px){
   .modal--wrapper{
     width: 60%;
     height: 90%;
   }
 
-  .modal--wrapper > form > input{
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
     margin: 10px 15px 20px;
     height: 3rem;
   }
@@ -105,11 +156,15 @@ label{
     height: 5rem;
   }
 
-  .categoryButtons > input{
+  .category--button{
     margin-top: 10px;
   }
 
-  #submitProductInfo{
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+    width: 200px;
+    height: 52px;
     margin: 0 20px;
   }
 }
@@ -120,29 +175,39 @@ label{
     width: 40%;
   }
 
-  .modal--wrapper > form > input{
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
     margin: 0px 30px 10px;
   }
 
-  .modal--wrapper > form > input:nth-child(4){
-    height: 4rem;
+  label, 
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+    margin: 0 30px;
   }
 
-  label, #submitProductInfo{
-    margin: 0 30px;
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+  width: 240px;
+  height: 52px;
+  }
+
+  .wrong--price{
+    margin:0px 35px 10px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .modal--wrapper > form > input{
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
     margin: 0px 30px 20px;
   }
 
-  .modal--wrapper > form > input:nth-child(4){
-    height: 5rem;
-  }
-
-  #submitProductInfo{
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
     margin-top: 30px;
   }
 }

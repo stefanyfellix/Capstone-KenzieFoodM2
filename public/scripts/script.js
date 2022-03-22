@@ -1,26 +1,35 @@
-import { ApiProductPrivate } from "./../../src/models/ApiProductPrivate.js"
-import { ApiAuthentication } from "./../../src/models/apiAuthentication.js"
-
+import { UserInteraction } from './../../src/controllers/userInteraction.js'
 
 const registerProductForm = document.querySelector('#registerProductForm')
-const token = ApiAuthentication.userToken;
+const deleteProductButton = document.querySelector('#deleteProduct')
+const editProductForm = document.querySelector('#editProductForm')
 
-const registerNewProduct = (event) => {
+const Panificadora = document.querySelector('button[value=Panificadora]')
+const Frutas = document.querySelector('button[value = Frutas]')
+const Bebidas = document.querySelector('button[value = Bebidas]')
 
-  const inputs = event.target
-  const productValues = {}
+registerProductForm.addEventListener('submit', UserInteraction.registerNewProduct)
+editProductForm.addEventListener('submit', UserInteraction.editProduct)
+deleteProductButton.addEventListener('click', UserInteraction.deleteProduct)
 
-  for (let i = 0; i < inputs.length; i++) {
-    const { name, value } = inputs[i]
+Panificadora.addEventListener('click', (event) => {
+  UserInteraction.categoryValue = event.target.value
+  Panificadora.classList.add('active')
+  Frutas.classList.remove('active')
+  Bebidas.classList.remove('active')
 
-    if (name) {
-      productValues[name] = value
-    }
-  }
+})
 
-  if (productValues.preco > 0) {
-    ApiProductPrivate.create('/my/products', productValues, token)
-  } window.alert("Preço deve ser maior que 0")
-}
+Frutas.addEventListener('click', (event) => {
+  UserInteraction.categoryValue = event.target.value
+  Frutas.classList.add('active')
+  Panificadora.classList.remove('active')
+  Bebidas.classList.remove('active')
+})
 
-registerProductForm.addEventListener('submit', registerNewProduct)
+Bebidas.addEventListener('click', (event) => {
+  UserInteraction.categoryValue = event.target.value
+  Bebidas.classList.add('active')
+  Panificadora.classList.remove('active')
+  Frutas.classList.remove('active')
+})
