@@ -3,6 +3,8 @@
         "ApiAuthentication",
         "ApiProductPublic",
         "ApiProductPrivate",
-        "ApiCart"
+        "ApiCart",
+        "home",
+        "interfaceHome"
     ]
 }
