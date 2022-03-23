@@ -3,6 +3,7 @@
         "ApiAuthentication",
         "ApiProductPublic",
         "ApiProductPrivate",
-        "ApiCart"
+        "ApiCart",
+        "LocalStorage"
     ]
 }

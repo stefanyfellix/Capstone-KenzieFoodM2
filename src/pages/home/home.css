@@ -20,17 +20,44 @@ body{
   margin: 0 auto;
 }
 
+.modal--wrapper > span{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey-1);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.modal--wrapper > span > p{
+  font-family: var(--body-font);
+  margin: 15px;
+  font-size: var(--big-font-size);
+  font-weight: var(--font-semi-bold);
+
+  cursor: pointer;
+}
+
+.delete--modal{
+  height: 30%;
+  top: 50px;
+}
+
+.delete--modal > h1{
+  font-family: var(--body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--big-font-size);
+
+  text-align: center;
+  margin-top: 10px;
+}
+
 .modal--title{
   font-family: var(--body-font);
   font-weight: var(--font-semi-bold);
   font-size: var(--normal-font-size);
 
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 28px;
-  border-radius: 8px 8px 0px 0px;
-  background-color: var(--grey-1);
 }
 
 span{
@@ -40,7 +67,8 @@ span{
 
 #submitProductInfo, 
 #saveProductChange, 
-#deleteProduct{
+#deleteProduct,
+.confirm--buttons > button{
   background-color: var(--color-primary);
   color: var(--grey-1);
 
@@ -60,10 +88,15 @@ span{
   align-self: center;
 }
 
-#deleteProduct{
+#deleteProduct,
+.confirm--buttons > button{
   background-color: var(--grey-1);
   border: 1.5px solid var(--grey-1);
   color: var(--grey-3);
+}
+
+.confirm--buttons > button{
+  width: 120px;
 }
 
 .modal--wrapper > form{
@@ -119,7 +152,7 @@ span{
   cursor: pointer;
 }
 
-.category--button:focus{
+.confirm--buttons > button:hover{
   background-color: var(--color-primary);
   color: var(--grey-1);
 }
@@ -146,6 +179,22 @@ label{
   .modal--wrapper{
     width: 60%;
     height: 90%;
+  }
+
+  .delete--modal{
+    height: 30%;
+  }
+
+  .delete--modal > h2{
+    width: 100%;
+  }
+
+  .delete--modal > h1{
+    margin: 40px 0 20px;
+  }
+
+  .confirm--buttons > button{
+    width: 200px;
   }
 
   .modal--wrapper > form > input,
@@ -177,6 +226,21 @@ label{
     width: 40%;
   }
 
+  .delete--modal{
+    height: 40%;
+  }
+
+  .confirm--buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirm--buttons > button{
+    width: 225px;
+    margin: 30px 15px;
+  }
+
   .modal--wrapper > form > input,
   .modal--wrapper > form > textarea{
     margin: 0px 30px 10px;
@@ -205,6 +269,21 @@ label{
   .modal--wrapper > form > input,
   .modal--wrapper > form > textarea{
     margin: 0px 30px 20px;
+  }
+
+  .delete--modal{
+    height: 30%;
+  }
+
+  .confirm--buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirm--buttons > button{
+    width: 225px;
+    margin: 30px 15px;
   }
 
   #submitProductInfo,

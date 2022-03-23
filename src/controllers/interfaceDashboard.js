@@ -1,6 +1,7 @@
 import { UserInteraction } from "./userInteraction.js"
 
 const body = document.querySelector('body')
+const modal = document.querySelector('modal--wrapper')
 
 export class InterfaceDashboard {
 
@@ -8,10 +9,20 @@ export class InterfaceDashboard {
     const modal = document.createElement('div')
     modal.classList.add('modal--wrapper')
 
+    const spanTitle = document.createElement('span')
+    modal.appendChild(spanTitle)
+
     const modalTitle = document.createElement('h2')
     modalTitle.classList.add('modal--title')
     modalTitle.innerText = 'Cadastro de produto'
-    modal.appendChild(modalTitle)
+    spanTitle.appendChild(modalTitle)
+
+    const closeModal = document.createElement('p')
+    closeModal.innerText = 'X'
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden')
+    })
+    spanTitle.appendChild(closeModal)
 
     const registerProductForm = document.createElement('form')
     registerProductForm.method = 'POST'
@@ -29,7 +40,7 @@ export class InterfaceDashboard {
     nameInput.name = 'nome'
     nameInput.id = 'productName'
     nameInput.placeholder = 'Digitar o nome'
-    nameInput.setAttribute('required', "")
+    nameInput.setAttribute('required', '')
     registerProductForm.appendChild(nameInput)
 
     const descriptionLabel = document.createElement('label')
@@ -41,7 +52,7 @@ export class InterfaceDashboard {
     descriptionInput.name = 'descricao'
     descriptionInput.id = 'productDescription'
     descriptionInput.placeholder = 'Digitar a descrição'
-    descriptionInput.setAttribute('required', "")
+    descriptionInput.setAttribute('required', '')
     registerProductForm.appendChild(descriptionInput)
 
     const categoryLabel = document.createElement('label')
@@ -104,7 +115,7 @@ export class InterfaceDashboard {
     priceInput.name = 'preco'
     priceInput.id = 'productPrice'
     priceInput.placeholder = 'Digite o valor aqui'
-    priceInput.setAttribute('required', "")
+    priceInput.setAttribute('required', '')
     registerProductForm.appendChild(priceInput)
 
     const wrongPrice = document.createElement('p')
@@ -129,12 +140,21 @@ export class InterfaceDashboard {
     submitButton.type = 'submit'
     submitButton.id = 'submitProductInfo'
     submitButton.innerText = 'Cadastrar Produto'
-    submitButton.addEventListener('submit', UserInteraction.registerNewProduct)
+    submitButton.addEventListener('submit', () => {
+      modal.classList.add('hidden')
+      UserInteraction.registerNewProduct()
+    })
     registerProductForm.appendChild(submitButton)
 
     if (whichModal === 1) {
       modalTitle.innerText = 'Editar produto'
       registerProductForm.removeChild(submitButton)
+
+      nameInput.removeAttribute('required', '')
+      descriptionInput.removeAttribute('required', '')
+      priceInput.removeAttribute('required', '')
+      imageUrlInput.removeAttribute('required', '')
+
 
       const span = document.createElement('span')
       registerProductForm.appendChild(span)
@@ -143,14 +163,55 @@ export class InterfaceDashboard {
       deleteProductFromApi.type = 'click'
       deleteProductFromApi.id = 'deleteProduct'
       deleteProductFromApi.innerText = 'Excluir'
-      deleteProductFromApi.addEventListener('click', UserInteraction.deleteProduct)
+      deleteProductFromApi.addEventListener('click', (event) => {
+        event.preventDefault()
+        modal.classList.add('hidden')
+        const deleteModal = document.createElement('div')
+        deleteModal.classList.add('modal--wrapper', 'delete--modal')
+
+        const modalTitle = document.createElement('h2')
+        modalTitle.classList.add('modal--title')
+        modalTitle.innerText = 'Cadastro de produto'
+        deleteModal.appendChild(modalTitle)
+
+        const modalText = document.createElement('h1')
+        modalText.innerText = 'Tem certeza que deseja excluir o produto?'
+        deleteModal.appendChild(modalText)
+
+        const confirmationButtons = document.createElement('div')
+        confirmationButtons.classList.add('confirm--buttons')
+        deleteModal.appendChild(confirmationButtons)
+
+        const acceptDelete = document.createElement('button')
+        acceptDelete.classList.add('deleteModalButton')
+        acceptDelete.innerText = 'Sim'
+        acceptDelete.addEventListener('click', () => {
+          UserInteraction.deleteProduct()
+          deleteModal.classList.add('hidden')
+        })
+        confirmationButtons.appendChild(acceptDelete)
+
+        const refuseDelete = document.createElement('button')
+        refuseDelete.classList.add('deleteModalButton')
+        refuseDelete.innerText = 'Não'
+        refuseDelete.addEventListener('click', () => {
+          deleteModal.classList.add('hidden')
+          modal.classList.remove('hidden')
+        })
+        confirmationButtons.appendChild(refuseDelete)
+
+        body.appendChild(deleteModal)
+      })
       span.appendChild(deleteProductFromApi)
 
       const saveEditedProduct = document.createElement('button')
       saveEditedProduct.type = 'submit'
       saveEditedProduct.id = 'saveProductChange'
       saveEditedProduct.innerText = 'Salvar Aterações'
-      saveEditedProduct.addEventListener('submit', UserInteraction.editProduct)
+      saveEditedProduct.addEventListener('submit', () => {
+        modal.classList.add('hidden')
+        UserInteraction.editProduct()
+      })
       span.appendChild(saveEditedProduct)
     }
 
