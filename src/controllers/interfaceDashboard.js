@@ -60,12 +60,11 @@ export class InterfaceDashboard {
     bakeryButton.innerText = 'Panificadora'
     bakeryButton.addEventListener('click', (event) => {
       UserInteraction.categoryValue = event.target.value
-      Panificadora.classList.add('active')
-      Frutas.classList.remove('active')
-      Bebidas.classList.remove('active')
+      bakeryButton.classList.add('active')
+      fruitsButton.classList.remove('active')
+      drinksButton.classList.remove('active')
     })
     categoryButtons.appendChild(bakeryButton)
-
 
     const fruitsButton = document.createElement('button')
     fruitsButton.type = 'button'
@@ -75,9 +74,9 @@ export class InterfaceDashboard {
     fruitsButton.innerText = 'Frutas'
     fruitsButton.addEventListener('click', (event) => {
       UserInteraction.categoryValue = event.target.value
-      Frutas.classList.add('active')
-      Panificadora.classList.remove('active')
-      Bebidas.classList.remove('active')
+      fruitsButton.classList.add('active')
+      bakeryButton.classList.remove('active')
+      drinksButton.classList.remove('active')
     })
     categoryButtons.appendChild(fruitsButton)
 
@@ -89,9 +88,9 @@ export class InterfaceDashboard {
     drinksButton.innerText = 'Bebidas'
     drinksButton.addEventListener('click', (event) => {
       UserInteraction.categoryValue = event.target.value
-      Bebidas.classList.add('active')
-      Panificadora.classList.remove('active')
-      Frutas.classList.remove('active')
+      drinksButton.classList.add('active')
+      bakeryButton.classList.remove('active')
+      fruitsButton.classList.remove('active')
     })
     categoryButtons.appendChild(drinksButton)
 
