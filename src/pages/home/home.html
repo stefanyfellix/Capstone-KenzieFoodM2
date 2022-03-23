@@ -11,7 +11,7 @@
 
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/0c9a104220.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +35,34 @@
             <button class="filters"><span class="filters--fruits"></span>Frutas</button>
             <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
         </section>
-
         <section class="showcase" id="showcase"></section>
+        
+        <aside >
+            <header class="headAsideCart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <p class="pCartAside">Carrinho</p>
+            </header>
+            <div class="section-itensAside">
+                <i id="icon-cartAside"class="fa-solid fa-bag-shopping"></i>
+                <p>Por enquanto não temos produto no carrinho</p>
+            </div>
+        </aside>
+
     </main>
+
+    <div class="modal-father">
+        <div class="modal-child">
+            <header class="modal-cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <p class="pCart">Carrinho</p>
+                <button class="btn-close"><i class="fa-solid fa-xmark"></i></button>
+            </header>
+            <div class="section-itens">
+                <i id="icon-cart"class="fa-solid fa-bag-shopping"></i>
+                <p>Por enquanto não temos produto no carrinho</p>
+            </div>
+        </div>
+    </div>
     <button class="cartMobileButton"><span class="cartMobileButton--ico"></span>Carrinho</button>
 </body>
 </html>
