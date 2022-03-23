@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Food</title>
+
+    <link rel="stylesheet" href="../../../public/css/reset.css">
+    <link rel="stylesheet" href="home.css">
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/0c9a104220.js" crossorigin="anonymous"></script>
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header class="header">
+        <h1 class="header--logo">Kenzie <span>Food</span></h1>
+        <div>
+            <input class="header--search" type="text" placeholder="Pesquisar por produto" id="searchInput">
+            <span class="header--ico"></span>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="filtersContainer">
+            <button class="filters filters--all">Todos</button>
+            <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
+            <button class="filters"><span class="filters--fruits"></span>Frutas</button>
+            <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
+        </section>
+
+        <section class="showcase" id="showcase"></section>
+    </main>
+    <button class="cartMobileButton"><span class="cartMobileButton--ico"></span>Carrinho</button>
+</body>
+</html>
