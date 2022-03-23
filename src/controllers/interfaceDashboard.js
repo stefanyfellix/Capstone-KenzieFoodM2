@@ -215,4 +215,41 @@ export class InterfaceDashboard {
 
     body.appendChild(modal)
   }
+
+  static statusMessageModal(status) {
+    const statusModal = document.createElement('div')
+    statusModal.classList.add('modal--wrapper')
+    statusModal.classList.add('status--modal')
+
+    const spanTitle = document.createElement('span')
+    statusModal.appendChild(spanTitle)
+
+    const modalTitle = document.createElement('h2')
+    modalTitle.classList.add('modal--title')
+    modalTitle.innerText = 'Status'
+    spanTitle.appendChild(modalTitle)
+
+    const closeModal = document.createElement('p')
+    closeModal.innerText = 'X'
+    closeModal.addEventListener('click', () => {
+      statusModal.classList.add('hidden')
+    })
+    spanTitle.appendChild(closeModal)
+
+    const statusMessage = document.createElement('p')
+    statusMessage.classList.add('status--message')
+    statusMessage.innerText = 'Produto adicionado com sucesso'
+    statusModal.appendChild(statusMessage)
+
+    if (status !== 201) {
+      statusMessage.innerText = 'Ocorreu algum erro, o produto não foi adicionado'
+
+      statusModal.style.borderBottom = '8px solid var(--color-primary)'
+    }
+
+    body.appendChild(statusModal)
+
+
+
+  }
 }

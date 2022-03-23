@@ -20,12 +20,31 @@ body{
   margin: 0 auto;
 }
 
+.status--modal{
+  bottom: 20px;
+  height: 130px;
+  border-bottom: 8px solid #39DF8F;
+}
+
+.status--modal > p{
+  font-family: var(--body-font);
+  font-weight: var(--font-regular);
+  font-size: var(--normal-font-size);
+  color: var(--grey-4);
+
+  margin: 20px;
+}
+
 .modal--wrapper > span{
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--grey-1);
   border-radius: 8px 8px 0px 0px;
+}
+
+.status--modal > span{
+  height: 60px;
 }
 
 .modal--wrapper > span > p{
@@ -186,6 +205,15 @@ label{
     height: 90%;
   }
 
+  .status--modal{
+    height: 130px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
+  }
+
   .delete--modal{
     height: 30%;
   }
@@ -231,6 +259,15 @@ label{
     width: 40%;
   }
 
+  .status--modal{
+    height: 140px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
+  }
+
   .delete--modal{
     height: 40%;
   }
@@ -274,6 +311,15 @@ label{
   .modal--wrapper > form > input,
   .modal--wrapper > form > textarea{
     margin: 0px 30px 20px;
+  }
+
+  .status--modal{
+    height: 140px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
   }
 
   .delete--modal{
