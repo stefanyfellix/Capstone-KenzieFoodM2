@@ -1,9 +1,5 @@
-import { ApiProductPrivate } from "./../../src/models/ApiProductPrivate.js"
+import { ApiProductPrivate } from "./../../src/models/apiProductPrivate.js"
 import { ApiAuthentication } from "./../../src/models/apiAuthentication.js"
-
-const productPrice = document.querySelector('.wrong--price')
-
-const token = ApiAuthentication.userToken;
 
 export class UserInteraction {
 
@@ -59,4 +55,28 @@ export class UserInteraction {
     event.preventDefault()
     ApiProductPrivate.delete(token, id)
   }
+
+  static async getLoginData(event){
+    event.preventDefault()
+
+    const inputs = event.target
+    const loginClient = {}
+    for (let i = 0; i < inputs.length; i++){
+        if (inputs[i].name){
+            loginClient[inputs[i].name] = inputs[i].value
+        }
+
+        inputs[i].value = ""
+    }
+
+    const response = await ApiAuthentication.login(loginClient);
+    //Esse erro indica se o usuário não existe ou se a senha está incorreta, que tal fazer uma tratativa para cada? 
+    if (response.error){
+      const errorMessage = document.getElementById("errorMessage");
+      errorMessage.classList.remove('hide');
+      errorMessage.classList.add("show");
+    }
+  }
 }
+
+
