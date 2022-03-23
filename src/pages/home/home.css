@@ -216,6 +216,11 @@ body{
     content: "\f217";
     margin-right: 21px;
 }
+
+.asideCart{
+    display: none;
+}
+
 .headAsideCart{
     background-color: #FF2253;
     border-radius:  15px 15px 0px 0px;
@@ -265,13 +270,36 @@ body{
         padding-left: 117px;
         padding-right: 117px;
     }
+
     .cartMobileButton{
         display: none;
     }
 
-    .modal-father{
-        display: none;
+    .asideCart{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .filtersContainer{
+        width: 100%;
+    }
+
+    .main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .showcase{
+        width: 700px;
+        height: 1000px;
+        margin-right: 100px;
+    }
+
+
 }
 
 
