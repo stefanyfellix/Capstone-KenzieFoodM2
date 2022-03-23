@@ -243,13 +243,9 @@ export class InterfaceDashboard {
 
     if (status !== 201) {
       statusMessage.innerText = 'Ocorreu algum erro, o produto não foi adicionado'
-
       statusModal.style.borderBottom = '8px solid var(--color-primary)'
     }
 
     body.appendChild(statusModal)
-
-
-
   }
 }
