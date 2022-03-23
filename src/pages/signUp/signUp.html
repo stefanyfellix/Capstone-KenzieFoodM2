@@ -8,12 +8,15 @@
     <title>Cadastro</title>
 </head>
   <body>
-    <header><h1>Kenzie Food</h1></header>
       <div class="signUp">
           <h1>Cadastro</h1>
+          <p id="errorMessage" class="hide">Usuário já cadastrado. Faça login ou tente novamente com outro e-mail.</p>
           <form id="signUpForm" action="submit">
+            <label for="name">Nome</label>
             <input type="text" name="name" id="nome" placeholder="Nome de usuário">
+            <label for="email">E-mail</label>
             <input type="email" name="email" id="email" placeholder="Email">
+            <label for="password">Senha</label>
             <input type="password" name="password" id="senha" placeholder="Senha">
             <button type="submit" id="submitSignUpInfo">Cadastrar</button>
             <a href="./../login/login.html">Já possuo cadastro</a>
