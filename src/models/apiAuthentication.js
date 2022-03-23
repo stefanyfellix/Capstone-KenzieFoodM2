@@ -1,5 +1,9 @@
+import { LocalStorage } from "./localStorage.js";
+
 export class ApiAuthentication{
-    static userToken = "";
+    static userToken = {
+        "token" : ""
+    };
     
     static async signUp(data) {
         const response      = await fetch("https://kenzie-food-api.herokuapp.com/auth/register", {
@@ -33,7 +37,8 @@ export class ApiAuthentication{
 
         if (responseData.status !== "Error") {
             //Deve com baste no status fornecer ao usuário uma indicação de que o login foi mal sucedido.
-            ApiAuthentication.userToken  = responseData;
+            ApiAuthentication.userToken.token  = responseData;
+            LocalStorage.setLocalStorage(ApiAuthentication.userToken);
         }
 
         return responseData;
