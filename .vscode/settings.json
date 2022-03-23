@@ -4,6 +4,7 @@
         "ApiProductPublic",
         "ApiProductPrivate",
         "ApiCart",
-        "LocalStorage"
+        "LocalStorage",
+        "home"
     ]
 }
