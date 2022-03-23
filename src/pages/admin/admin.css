@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
-
 body{
     display: flex;
     flex-direction: column;
-    gap: 38px;
     background-color: #f6f3f3;
 }
 header{
@@ -13,6 +10,7 @@ header{
     align-items: center;
     background-color: white;
     padding: 0 100px;
+    margin-bottom: 20px;
 }
 .KenzieFood{
     height: 38px;
@@ -56,7 +54,7 @@ header{
     width: 132px;
 }
 .btn{
-    background-color: #E9ECEF;
+    background-color: var(--grey-2);
     border: 1.5px solid #E9ECEF;
     box-sizing: border-box;
     border-radius: 32px;
@@ -88,6 +86,9 @@ header{
     font-family: 'Inter', sans-serif;
     border: 1.5px solid #FF2253;
     border-radius: 32px;
+}
+button{
+    cursor: pointer;
 }
 td, th{
     padding: 20px;
@@ -127,4 +128,5 @@ td, th{
     background-color: #F8F9FA;
     border: none;
     color: #868E96;
+    cursor: pointer;
 }

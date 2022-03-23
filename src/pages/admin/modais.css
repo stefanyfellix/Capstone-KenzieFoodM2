@@ -1,0 +1,343 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal--wrapper{
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+  position: absolute;
+  width: 90%;
+  height: 95%;
+
+  background-color: #fff;
+  border-radius: 8px 8px 8px 8px;
+  margin: 0 auto;
+}
+
+.status--modal{
+  bottom: 20px;
+  height: 130px;
+  border-bottom: 8px solid #39DF8F;
+}
+
+.status--modal > p{
+  font-family: var(--body-font);
+  font-weight: var(--font-regular);
+  font-size: var(--normal-font-size);
+  color: var(--grey-4);
+
+  margin: 20px;
+}
+
+.modal--wrapper > span{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey-1);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.status--modal > span{
+  height: 60px;
+}
+
+.modal--wrapper > span > p{
+  margin: 15px;
+  cursor: pointer;
+  padding: 10px;
+
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--grey-3);
+  
+  background-color: var(--grey-2);
+  border-radius: 4px;
+}
+
+.delete--modal{
+  height: 30%;
+  top: 50px;
+}
+
+.delete--modal > h1{
+  font-family: var(--body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--big-font-size);
+
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal--title{
+  font-family: var(--body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+
+  align-items: center;
+  padding: 20px 28px;
+}
+
+span{
+  display: flex;
+  justify-content: center;
+}
+
+#submitProductInfo, 
+#saveProductChange, 
+#deleteProduct,
+.confirm--buttons > button{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+
+  margin: 20px 10px 0 10px;
+  padding: 15px 20px;
+  border-radius: 32px;
+  border: 1.5px solid var(--color-primary);
+
+  font-family: var(--font-secondary);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--big-font-size);
+
+  cursor: pointer;
+}
+
+#submitProductInfo{
+  align-self: center;
+}
+
+#deleteProduct,
+.confirm--buttons > button{
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-1);
+  color: var(--grey-3);
+}
+
+.confirm--buttons > button{
+  width: 120px;
+}
+
+.modal--wrapper > form{
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-secondary);
+  font-size: var(--normal-font-size);
+}
+
+.modal--wrapper > form > textarea{
+  resize: none;
+  overflow: hidden;
+  font-family: var(--font-secondary);
+  height: 100px;
+}
+
+.modal--wrapper > form > textarea::placeholder{
+  font-size: var(--normal-font-size);
+}
+
+.modal--wrapper > form > input,
+.modal--wrapper > form > textarea{
+  border-radius: 12px;
+  height: 2.25rem;
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-2);
+  color: var(--grey-3);
+  margin: 0 10px;
+  padding: 15px;
+}
+
+.modal--wrapper > form > input:focus,
+.modal--wrapper > form > textarea:focus{
+  background-color: #fff;
+  color: var(--grey-4);
+}
+
+.modal--wrapper > form > input::placeholder{
+  font-size: var(--normal-font-size);
+}
+
+.category--button{
+  background-color: var(--grey-1);
+  border: 1.5px solid var(--grey-1);
+  border-radius: 32px;
+  padding: 11px 10px;
+
+  color: var(--grey-3);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+
+  cursor: pointer;
+}
+
+.confirm--buttons > button:hover{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+}
+
+.active{
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+}
+
+label{
+  padding: 10px 15px;
+}
+
+.hidden{
+  display: none;
+}
+
+.wrong--price{
+  color: var(--color-primary);
+  margin:3px 20px 10px;
+}
+
+@media screen and (min-width: 768px){
+  .modal--wrapper{
+    width: 60%;
+    height: 90%;
+  }
+
+  .status--modal{
+    height: 130px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
+  }
+
+  .delete--modal{
+    height: 30%;
+  }
+
+  .delete--modal > h2{
+    width: 100%;
+  }
+
+  .delete--modal > h1{
+    margin: 40px 0 20px;
+  }
+
+  .confirm--buttons > button{
+    width: 200px;
+  }
+
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
+    margin: 10px 15px 20px;
+    height: 3rem;
+  }
+
+  .modal--wrapper > form > input:nth-child(4){
+    height: 5rem;
+  }
+
+  .category--button{
+    margin-top: 10px;
+  }
+
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+    width: 200px;
+    height: 52px;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .modal--wrapper{
+    height: 90%;
+    width: 40%;
+  }
+
+  .status--modal{
+    height: 140px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
+  }
+
+  .delete--modal{
+    height: 40%;
+  }
+
+  .confirm--buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirm--buttons > button{
+    width: 225px;
+    margin: 30px 15px;
+  }
+
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
+    margin: 0px 30px 10px;
+  }
+
+  label, 
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+    margin: 0 30px;
+  }
+
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+  width: 240px;
+  height: 52px;
+  }
+
+  .wrong--price{
+    margin:0px 35px 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal--wrapper > form > input,
+  .modal--wrapper > form > textarea{
+    margin: 0px 30px 20px;
+  }
+
+  .status--modal{
+    height: 140px;
+    right: 30px;
+  }
+
+  .status--modal > span{
+    height: 60px;
+  }
+
+  .delete--modal{
+    height: 30%;
+  }
+
+  .confirm--buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirm--buttons > button{
+    width: 225px;
+    margin: 30px 15px;
+  }
+
+  #submitProductInfo,
+  #saveProductChange, 
+  #deleteProduct{
+    margin-top: 30px;
+  }
+}
