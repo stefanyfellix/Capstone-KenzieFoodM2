@@ -9,7 +9,7 @@ export class UserInteraction {
 
   static categoryValue = ''
 
-  static registerNewProduct = (event) => {
+  static registerNewProduct(event) {
     event.preventDefault()
 
     const inputs = event.target
@@ -24,7 +24,6 @@ export class UserInteraction {
     }
     productValues["categoria"] = this.categoryValue
 
-    console.log(productValues)
     if (productValues.preco > 0) {
       ApiProductPrivate.create(productValues, token)
       productPrice.classList.add('hidden')
@@ -33,7 +32,7 @@ export class UserInteraction {
     }
   }
 
-  static editProduct = (event) => {
+  static editProduct(event) {
     event.preventDefault()
 
     const inputs = event.target
@@ -56,7 +55,7 @@ export class UserInteraction {
     }
   }
 
-  static deleteProduct = (event) => {
+  static deleteProduct(event) {
     event.preventDefault()
     ApiProductPrivate.delete(token, id)
   }
