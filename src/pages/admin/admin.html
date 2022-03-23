@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/src/pages/admin/admin.css">
+    <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img class="KenzieFood" src="/img/Group 1075 (1).jpg" alt="KenzieFood">
+        <div class="search_user">
+            <input class="search" type="text" placeholder="Pesquisar por produto">
+            <img src="/img/Frame 1.jpg" alt="User">
+        </div>
+    </header>
+    <section class="buttons">
+        <div class="category_btns">
+            <button class="all">Todos</button>
+            <button id="bakery"class="btn">Panificadora</button>
+            <button id="fruit" class="btn">Frutas</button>
+            <button id="drinks" class="btn">Bebidas</button>
+        </div>
+        <button class="addProduct">Adicionar produto</button>
+    </section>
+    <div class="table" id="table">
+
+        <table class="table-product">
+            <thead id="headTable-product" class="headTable-product">
+                <tr id="head-data" class="head-data">
+                    <th id="product-table">Produto</th>
+                    <th id="category-table">Categoria</th>
+                    <th id="description-table">Descrições</th>
+                    <th id="actions-table">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable-product"></tbody>
+        </table>
+
+    </div>
+
+
+    <script type = "module"src="/src/script.js"></script>
+</body>
+</html>
