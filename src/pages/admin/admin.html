@@ -16,37 +16,42 @@
 </head>
 
 <body>
-    <header>
-        <img class="KenzieFood" src="/img/Group 1075 (1).jpg" alt="KenzieFood">
-        <div class="search_user">
-            <input class="search" type="text" placeholder="Pesquisar por produto">
-            <img src="/img/Frame 1.jpg" alt="User">
+    <header class="header">
+        <h1 class="header--logo">Kenzie <span>Food</span></h1>
+        <div>
+            <input class="header--search" type="text" placeholder="Pesquisar por produto" id="searchInput">
+            <span class="header--ico"></span>
+            <img src="../../../img/Frame 1.jpg" alt="Usuário">
         </div>
     </header>
-    <section class="buttons">
-        <div class="category_btns">
-            <button class="all">Todos</button>
-            <button id="bakery" class="btn">Panificadora</button>
-            <button id="fruit" class="btn">Frutas</button>
-            <button id="drinks" class="btn">Bebidas</button>
+
+    <main>
+        <section class="buttonsContainer">
+            <button class="buttons--addProduct">Adicionar produto</button>
+            <section class="filtersContainer">
+                <button class="filters filters--all">Todos</button>
+                <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
+                <button class="filters"><span class="filters--fruits"></span>Frutas</button>
+                <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
+            </section>
+        </section>
+
+        <div class="table" id="table">
+    
+            <table class="table-product">
+                <thead id="headTable-product" class="headTable-product">
+                    <tr id="head-data" class="head-data">
+                        <th id="product-table">Produto</th>
+                        <th id="category-table">Categoria</th>
+                        <th id="description-table">Descrições</th>
+                        <th id="actions-table">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable-product"></tbody>
+            </table>
+    
         </div>
-        <button class="addProduct">Adicionar produto</button>
-    </section>
-    <div class="table" id="table">
-
-        <table class="table-product">
-            <thead id="headTable-product" class="headTable-product">
-                <tr id="head-data" class="head-data">
-                    <th id="product-table">Produto</th>
-                    <th id="category-table">Categoria</th>
-                    <th id="description-table">Descrições</th>
-                    <th id="actions-table">Ações</th>
-                </tr>
-            </thead>
-            <tbody id="bodyTable-product"></tbody>
-        </table>
-
-    </div>
+    </main>
 
 
     <script type="module" src="./../../../public/scripts/script.js"></script>
