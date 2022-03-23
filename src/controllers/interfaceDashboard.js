@@ -1,7 +1,6 @@
 import { UserInteraction } from "./userInteraction.js"
 
 const body = document.querySelector('body')
-const modal = document.querySelector('modal--wrapper')
 
 export class InterfaceDashboard {
 
@@ -154,7 +153,6 @@ export class InterfaceDashboard {
       descriptionInput.removeAttribute('required', '')
       priceInput.removeAttribute('required', '')
       imageUrlInput.removeAttribute('required', '')
-
 
       const span = document.createElement('span')
       registerProductForm.appendChild(span)

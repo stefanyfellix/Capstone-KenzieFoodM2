@@ -29,12 +29,17 @@ body{
 }
 
 .modal--wrapper > span > p{
-  font-family: var(--body-font);
   margin: 15px;
+  cursor: pointer;
+  padding: 10px;
+
+  font-family: var(--body-font);
   font-size: var(--big-font-size);
   font-weight: var(--font-semi-bold);
-
-  cursor: pointer;
+  color: var(--grey-3);
+  
+  background-color: var(--grey-2);
+  border-radius: 4px;
 }
 
 .delete--modal{
