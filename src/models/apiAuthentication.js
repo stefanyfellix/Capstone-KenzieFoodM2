@@ -30,9 +30,10 @@ export class ApiAuthentication{
 
         //A resposta em formato JSON é o token de acesso se o usuário existe, se não é um objeto assim --> {status: 'Error', message: 'User does not exists'}
         const responseData      = await response.json();
-
+        const errorMessage = document.getElementById("errorMessage")
         if (responseData.status !== "Error") {
-            //Deve com baste no status fornecer ao usuário uma indicação de que o login foi mal sucedido.
+            errorMessage.classList.remove('hide')
+            errorMessage.classList.add("show")
             ApiAuthentication.userToken  = responseData;
         }
 

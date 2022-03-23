@@ -8,7 +8,7 @@ header {
     margin: 0 auto;
 }
 
-.login {
+.login{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -21,17 +21,14 @@ header {
 }
 
 input {
+    margin: 0 auto;
     margin-bottom: 30px;
-    height: 60px;
-    width: 394px;
+    height: 40px;
+    width: 300px;
     text-align: left;
     border-radius: 12px;
     border: 1.5px solid #DEE2E6;
     background-color: #F8F9FA;
-}
-
-#senha {
-    background-color: #E9ECEF;
 }
 
 
@@ -49,6 +46,7 @@ input {
 #submitLoginInfo:hover{
     color: #ffffff;
     background-color: #FF2253;
+    cursor: pointer;
 }
 
 
@@ -61,4 +59,20 @@ label {
 
 a {
     text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    color: #FF2253;
+    font-size: 14px;
+}
+
+@media only screen and (min-width:500px) {
+    input {
+        height: 60px;
+        width: 394px;       
+    }
 }
