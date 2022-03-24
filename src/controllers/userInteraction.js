@@ -128,25 +128,27 @@ export class UserInteraction {
       errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else {
       window.open("../home/home.html", "_self");
+
     }
   }
 
   static async getDataUser(event) {
     event.preventDefault()
+    const errorMessage = document.getElementById('errorMessage')
 
     const inputs = event.target
     const dataUser = {}
+    
+    for (let i = 0; i < inputs.length; i++){
+        if (inputs[i].name){
+          dataUser[inputs[i].name] = inputs[i].value
+        }
 
-    for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i].name) {
-        dataUser[inputs[i].name] = inputs[i].value
-      }
-      inputs[i].value = "";
+        inputs[i].value = "";
     }
 
     const response = await ApiAuthentication.signUp(dataUser);
 
-    const errorMessage = document.getElementById('errorMessage');
     if (response === "User Already Exists!") {
       errorMessage.innerHTML = "Usuário já existe<span>Tente se cadastrar com outro email ou faça seu login.";
     } else if (response.status === 'Error') {

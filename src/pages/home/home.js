@@ -13,12 +13,14 @@ if (authentication){
     InterfaceHome.templateShowcase(ApiProductPrivate.dataProductPrivate);
     InterfaceHome.fillTheCart("private");
     //Um botão para a dashboard
+    InterfaceHome.transitionPages("private")
     //Um botão para logout --> Atualiza a página
+
 } else{
     await ApiProductPublic.list();
     InterfaceHome.templateShowcase(ApiProductPublic.dataProductPublic);
     InterfaceHome.fillTheCart("public");
-    //Um botão para o login
+    InterfaceHome.transitionPages("public")
 }
 
 const openCart = document.getElementById("openCart");
