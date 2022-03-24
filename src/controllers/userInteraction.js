@@ -94,10 +94,11 @@ export class UserInteraction {
 
     const response = await ApiAuthentication.signUp(dataUser);
 
+    const errorMessage = document.getElementById('errorMessage');
     if (response === "User Already Exists!"){
-      const errorMessage = document.getElementById('errorMessage')
-      errorMessage.classList.remove('hide')
-      errorMessage.classList.add("show")
+      errorMessage.innerHTML = "Usuário já existe<span>Tente se cadastrar com outro email ou faça seu login.";
+    } else if(response.status === 'Error'){
+      errorMessage.innerHTML = "Todos os campos precisam ser preenchidos corretamente.";
     } else{
       window.open("../login/login.html", "_self");
     }
