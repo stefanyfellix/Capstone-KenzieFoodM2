@@ -1,12 +1,15 @@
-import { ApiProductPublic } from '../../../src/models/apiProductPublic.js'
+import { ApiProductPrivate } from '../../../src/models/apiProductPrivate.js'
 import { InterfaceDashboard } from '../../../src/controllers/interfaceDashboard.js'
 import {Filter} from '../../../src/controllers/filter.js'
+import { LocalStorage } from '../../../src/models/localStorage.js'
 
 
+const tokenAcess = await LocalStorage.getLocalStorage("authentication");
 
+await ApiProductPrivate.list(tokenAcess.token);
+console.log(ApiProductPrivate.dataProductPrivate)
+InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
 
-await ApiProductPublic.list()
-InterfaceDashboard.renderTable(ApiProductPublic.dataProductPublic)
 
 const addProductButton = document.getElementById('addProduct');
 addProductButton.addEventListener('click', () => {
@@ -15,17 +18,17 @@ addProductButton.addEventListener('click', () => {
 
 const btnAll    = document.getElementById('BtnAll')
 btnAll.addEventListener('click', ()=>{
-    InterfaceDashboard.renderTable(ApiProductPublic.dataProductPublic)
+    InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
 })
 const btnBakery = document.getElementById('Btnbakery')
 btnBakery.addEventListener('click', ()=>{
-  Filter.filterDashboardBtn(ApiProductPublic.dataProductPublic, 'Panificadora')
+  Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Panificadora')
 })
 const btnFruits = document.getElementById('Btnfruits')
 btnFruits.addEventListener('click', ()=>{
-  Filter.filterDashboardBtn(ApiProductPublic.dataProductPublic, 'Frutas')
+  Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Frutas')
 })
 const btnDrinks = document.getElementById('Btndrinks')
 btnDrinks.addEventListener('click', ()=>{
-  Filter.filterDashboardBtn(ApiProductPublic.dataProductPublic, 'Bebidas')
+  Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Bebidas')
 })

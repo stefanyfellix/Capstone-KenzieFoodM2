@@ -10,6 +10,7 @@ export class Filter{
         const dataPrivate = ApiProductPrivate.dataProductPrivate
         if(permission === 'public'){
             const listSection = dataPublic.filter((element) => {
+                console.log(element.categoria)
                 return element.categoria === category
             })
             InterfaceHome.templateShowcase(listSection)

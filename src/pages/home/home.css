@@ -287,7 +287,6 @@ body{
     align-items: center;
     justify-content: flex-start;
     background-color: #FFFFFF;
-    border-radius: 0px 0px 12px 12px;
     width: 100%;
     max-width: 350px;
     height: calc(100% - 70px);
@@ -594,6 +593,8 @@ body{
 .cartEmpty{
     justify-content: center;
     align-items: center;
+
+    border-radius: 0px 0px 15px 15px;
 }
 
 aside:hover .section-itensAside::-webkit-scrollbar-thumb{
@@ -606,7 +607,7 @@ aside:hover .section-itensAside::-webkit-scrollbar-thumb{
 
     position: absolute;
     z-index: 99;
-    backdrop-filter: blur(7px);
+    backdrop-filter: brightness(0.5);
 }
 
 .cartMobile{
@@ -666,9 +667,10 @@ aside:hover .section-itensAside::-webkit-scrollbar-thumb{
     }
 
     .main{
+        width: 80%;
         padding: 20px;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
 
         height: calc(100vh - 169px);
@@ -681,6 +683,8 @@ aside:hover .section-itensAside::-webkit-scrollbar-thumb{
 
         flex-wrap: wrap;
         margin-right: 0;
+
+        width: 1000px;
 
         margin-right: 67px;
         overflow-y: auto;

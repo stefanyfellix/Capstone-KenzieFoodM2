@@ -82,6 +82,8 @@ export class InterfaceHome{
     }
 
     static templateShowcase(arrayOfProducts){
+        const showcase = document.getElementById("showcase");
+        showcase.innerHTML = '';
         arrayOfProducts.forEach((product) => InterfaceHome.cardShowcase(product));
     }
 
