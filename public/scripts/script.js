@@ -1,5 +1,9 @@
 import { ApiProductPublic } from '../../src/models/apiProductPublic.js'
 import { InterfaceDashboard } from './../../src/controllers/interfaceDashboard.js'
+import {Filter} from './../../src/controllers/filter.js'
+
+
+
 
 await ApiProductPublic.list()
 InterfaceDashboard.renderTable(ApiProductPublic.dataProductPublic)
@@ -20,7 +24,7 @@ showDeleteModal.forEach((button) => {
   })
 })
 
-const showRegisterModal = document.querySelector('.addProduct')
-showRegisterModal.addEventListener('click', () => {
-  InterfaceDashboard.showModal(0)
-})
+//const showRegisterModal = document.querySelector('.addProduct')
+//showRegisterModal.addEventListener('click', () => {
+//  InterfaceDashboard.showModal(0)
+//})
