@@ -1,13 +1,7 @@
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .modal--wrapper{
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  z-index: 100;
 
   position: absolute;
   width: 90%;
@@ -15,13 +9,24 @@ body{
 
   background-color: #fff;
   border-radius: 8px 8px 8px 8px;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.modal--screen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,0.5);
 }
 
 .status--modal{
   bottom: 20px;
   height: 130px;
-  border-bottom: 8px solid #39DF8F;
+  border-bottom: 8px solid var(--status-okay);
 }
 
 .status--modal > p{

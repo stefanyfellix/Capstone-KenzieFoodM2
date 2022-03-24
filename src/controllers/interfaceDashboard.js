@@ -8,30 +8,65 @@ const token = LocalStorage.getLocalStorage()
 export class InterfaceDashboard {
 
     static templateTable(Img, nameProduct, category, description, id) {
+        const Tablebody = document.getElementById('bodyTable-product')
+
         const rowBody = document.createElement('tr')
         rowBody.setAttribute('id', id)
         rowBody.setAttribute('class', 'rowBody')
-        const Tablebody = document.getElementById('bodyTable-product')
 
-        rowBody.innerHTML = `
-    <td class="img_name">
-    <img class="imgProducts" src="${Img}">
-    ${nameProduct}
-    </td>
-    <td class="tableTd">${category}</td>
-    <td class="tableTd">${description}</td>
-    <td>
-    <button class="icon" id="showEditModal"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="icon" id="showDeleteModal"><i class="fa-solid fa-trash"></i></button>
-    </td>
-    `
+        const imgNameTd = document.createElement('td')
+        imgNameTd.innerText = nameProduct
+        imgNameTd.classList.add('img--name')
+        rowBody.appendChild(imgNameTd)
+
+        const productImg = document.createElement('img')
+        productImg.classList.add('img--products')
+        productImg.setAttribute('src', Img)
+        imgNameTd.appendChild(productImg)
+
+        const categoryTd = document.createElement('td')
+        categoryTd.classList.add('tableTd')
+        categoryTd.innerText = category
+        rowBody.appendChild(categoryTd)
+
+        const descriptionTd = document.createElement('td')
+        descriptionTd.classList.add('tableTd')
+        categoryTd.innerText = description
+        rowBody.appendChild(descriptionTd)
+
+        const buttonsTd = document.createElement('td')
+        rowBody.appendChild(buttonsTd)
+
+        const editProductButton = document.createElement('button')
+        editProductButton.classList.add('icon')
+        editProductButton.id = 'showEditModal'
+        editProductButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
+        editProductButton.addEventListener('click', () => {
+            const id = editProductButton.closest('tr').id
+            InterfaceDashboard.showModal(1, id)
+        })
+        buttonsTd.appendChild(editProductButton)
+
+        const deleteProductButton = document.createElement('button')
+        deleteProductButton.classList.add('icon')
+        deleteProductButton.id = 'showEditModal'
+        deleteProductButton.innerHTML = '<i class="fa-solid fa-trash"></i>'
+        deleteProductButton.addEventListener('click', () => {
+            const id = deleteProductButton.closest('tr').id
+            InterfaceDashboard.deleteModal(id)
+        })
+        buttonsTd.appendChild(deleteProductButton)
+
         Tablebody.appendChild(rowBody)
     }
 
-    static async renderTable(arr) {
+    static async renderTable() {
         const Tablebody = document.getElementById('bodyTable-product')
         Tablebody.innerHTML = ""
-        arr.forEach(product => {
+
+        await ApiProductPublic.list()
+
+        ApiProductPublic.dataProduct.forEach(product => {
             const img = product.imagem
             const nameProduct = product.nome
             const category = product.categoria
@@ -40,13 +75,15 @@ export class InterfaceDashboard {
 
             InterfaceDashboard.templateTable(img, nameProduct, category, description, id)
         });
-
     }
 
     static showModal(whichModal, id) {
+        const modalScreen = document.createElement('div')
+        modalScreen.classList.add('modal--screen')
 
         const modal = document.createElement('div')
         modal.classList.add('modal--wrapper')
+        modalScreen.appendChild(modal)
 
         const spanTitle = document.createElement('span')
         modal.appendChild(spanTitle)
@@ -59,7 +96,7 @@ export class InterfaceDashboard {
         const closeModal = document.createElement('p')
         closeModal.innerText = 'X'
         closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden')
+            modalScreen.classList.add('hidden')
         })
         spanTitle.appendChild(closeModal)
 
@@ -180,7 +217,7 @@ export class InterfaceDashboard {
         submitButton.id = 'submitProductInfo'
         submitButton.innerText = 'Cadastrar Produto'
         submitButton.addEventListener('submit', () => {
-            modal.classList.add('hidden')
+            modalScreen.classList.add('hidden')
             UserInteraction.registerNewProduct()
         })
         registerProductForm.appendChild(submitButton)
@@ -203,7 +240,7 @@ export class InterfaceDashboard {
             deleteProductFromApi.innerText = 'Excluir'
             deleteProductFromApi.addEventListener('click', (event) => {
                 event.preventDefault()
-                modal.classList.add('hidden')
+                modalScreen.classList.add('hidden')
                 this.deleteModal()
             })
             span.appendChild(deleteProductFromApi)
@@ -213,19 +250,23 @@ export class InterfaceDashboard {
             saveEditedProduct.id = 'saveProductChange'
             saveEditedProduct.innerText = 'Salvar Aterações'
             saveEditedProduct.addEventListener('submit', () => {
-                modal.classList.add('hidden')
+                modalScreen.classList.add('hidden')
                 UserInteraction.editProduct(token, id, event)
 
             })
             span.appendChild(saveEditedProduct)
         }
 
-        body.appendChild(modal)
+        body.appendChild(modalScreen)
     }
 
     static deleteModal(id) {
+        const modalScreen = document.createElement('div')
+        modalScreen.classList.add('modal--screen')
+
         const deleteModal = document.createElement('div')
         deleteModal.classList.add('modal--wrapper', 'delete--modal')
+        modalScreen.appendChild(deleteModal)
 
         const modalTitle = document.createElement('h2')
         modalTitle.classList.add('modal--title')
@@ -253,11 +294,11 @@ export class InterfaceDashboard {
         refuseDelete.classList.add('deleteModalButton')
         refuseDelete.innerText = 'Não'
         refuseDelete.addEventListener('click', () => {
-            deleteModal.classList.add('hidden')
+            modalScreen.classList.add('hidden')
         })
         confirmationButtons.appendChild(refuseDelete)
 
-        body.appendChild(deleteModal)
+        body.appendChild(modalScreen)
     }
 
     static statusMessageModal(status) {

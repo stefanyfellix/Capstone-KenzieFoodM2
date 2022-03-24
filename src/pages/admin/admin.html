@@ -30,14 +30,14 @@
             <button class="buttons--addProduct">Adicionar produto</button>
             <section class="filtersContainer">
                 <button class="filters filters--all">Todos</button>
-                <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
+                <button class="filters"><span class="filters--bread"></span> Panificadora</button>
                 <button class="filters"><span class="filters--fruits"></span>Frutas</button>
                 <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
             </section>
         </section>
 
         <div class="table" id="table">
-    
+
             <table class="table-product">
                 <thead id="headTable-product" class="headTable-product">
                     <tr id="head-data" class="head-data">
@@ -49,12 +49,21 @@
                 </thead>
                 <tbody id="bodyTable-product"></tbody>
             </table>
-    
+
         </div>
     </main>
 
 
-    <script type="module" src="./../../../public/scripts/script.js"></script>
+    <script type="module">
+        import { InterfaceDashboard } from './../../../src/controllers/interfaceDashboard.js'
+
+        InterfaceDashboard.renderTable()
+
+        const showRegisterModal = document.querySelector('.buttons--addProduct')
+        showRegisterModal.addEventListener('click', () => {
+            InterfaceDashboard.showModal(0)
+        })
+    </script>
 </body>
 
 </html>
