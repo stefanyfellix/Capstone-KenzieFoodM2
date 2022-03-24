@@ -49,4 +49,5 @@ export class InterfaceHome{
     static templateShowcase(arrayOfProducts){
         arrayOfProducts.forEach((product) => InterfaceHome.cardShowcase(product));
     }
+
 }

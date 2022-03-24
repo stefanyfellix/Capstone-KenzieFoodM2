@@ -1,5 +1,6 @@
 import { ApiProductPrivate } from "./../../src/models/apiProductPrivate.js"
 import { ApiAuthentication } from "./../../src/models/apiAuthentication.js"
+import { InterfaceHome } from "./interfaceHome.js"
 
 export class UserInteraction {
 
@@ -72,16 +73,19 @@ export class UserInteraction {
     const response = await ApiAuthentication.login(loginClient);
     //Esse erro indica se o usuário não existe ou se a senha está incorreta, que tal fazer uma tratativa para cada? 
     if (response.error){
-      const errorMessage = document.getElementById("errorMessage");
-      errorMessage.classList.remove('hide');
-      errorMessage.classList.add("show");
+      const errorMessageLogin = document.getElementById("errorMessage--login");
+      errorMessageLogin.classList.remove('hide');
+      errorMessageLogin.classList.add("show");
     } else{
+      InterfaceHome.transitionPages(response)
       window.open("../home/home.html", "_self");
+
     }
   }
 
   static async getDataUser(event){
     event.preventDefault()
+    const errorMessageSignUp = document.getElementById('errorMessage--signUp')
 
     const inputs = event.target
     const dataUser = {}
@@ -89,18 +93,23 @@ export class UserInteraction {
     for (let i = 0; i < inputs.length; i++){
         if (inputs[i].name){
           dataUser[inputs[i].name] = inputs[i].value
+          if (inputs[i].value == ""){
+            errorMessageSignUp.innerHTML = "Por favor, insira seus dados para efetuar o cadastro."
+            errorMessageSignUp.classList.remove('hide')
+            errorMessageSignUp.classList.add("show")
+          } 
         }
+
         inputs[i].value = "";
     }
 
     const response = await ApiAuthentication.signUp(dataUser);
 
     if (response === "User Already Exists!"){
-      const errorMessage = document.getElementById('errorMessage')
-      errorMessage.classList.remove('hide')
-      errorMessage.classList.add("show")
-    } else{
-      window.open("../login/login.html", "_self");
+      errorMessageSignUp.classList.remove('hide')
+      errorMessageSignUp.classList.add("show")
+    } else {
+      window.open("../login/login.html", "_self")
     }
   }
 }
