@@ -21,11 +21,15 @@ export class InterfaceDashboard {
     <td class="tableTd">${category}</td>
     <td class="tableTd">${description}</td>
     <td>
-    <button class="icon" id="showEditModal"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="icon" id="showDeleteModal"><i class="fa-solid fa-trash"></i></button>
+    <button class="icon showEditModal"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button class="icon showDeleteModal"><i class="fa-solid fa-trash"></i></button>
     </td>
     `
+        const btnShowEditModal = document.querySelectorAll('.showEditModal')
+        const btnDeleteModal   = document.querySelectorAll('.showDeleteModal')
+
         Tablebody.appendChild(rowBody)
+
     }
 
     static async renderTable(arr) {

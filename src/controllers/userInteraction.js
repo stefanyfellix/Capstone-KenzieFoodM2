@@ -73,9 +73,8 @@ export class UserInteraction {
     const response = await ApiAuthentication.login(loginClient);
     //Esse erro indica se o usuário não existe ou se a senha está incorreta, que tal fazer uma tratativa para cada? 
     if (response.error){
-      const errorMessageLogin = document.getElementById("errorMessage--login");
-      errorMessageLogin.classList.remove('hide');
-      errorMessageLogin.classList.add("show");
+      const errorMessage = document.getElementById("errorMessage");
+      errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else{
       InterfaceHome.transitionPages(response)
       window.open("../home/home.html", "_self");

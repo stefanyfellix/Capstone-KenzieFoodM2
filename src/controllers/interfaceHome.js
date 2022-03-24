@@ -1,6 +1,14 @@
+import { ApiAuthentication } from "../models/apiAuthentication.js";
+import { ApiCart } from "../models/apiCart.js";
+import { LocalStorage } from "../models/localStorage.js";
+
 export class InterfaceHome{
+
+    static cartEmpty = true;
+    static cartQuantity = 0;
+    static cartTotal = 0;
     
-    static cardShowcase({id, nome, preco, categoria, imagem, descricao}){
+    static async cardShowcase({id, nome, preco, categoria, imagem, descricao}){
         const showcase = document.getElementById("showcase");
         const card = document.createElement("section");
         const imgContainer = document.createElement("div");
@@ -24,13 +32,40 @@ export class InterfaceHome{
         addCart.classList.add("card--addCart");
     
         card.id = id;
-        //addCart.addEventListener('click')
-    
+        addCart.addEventListener('click', async () => {
+            InterfaceHome.cardCart(id, nome, preco, categoria, imagem);
+
+            if (ApiAuthentication.userToken.token !== ""){
+                ApiCart.add({
+                    product_id: id
+                }, ApiAuthentication.userToken.token);
+            } else{
+                let arr = await LocalStorage.getLocalStorage("cart");
+                if (arr === false) arr = [];
+                arr.push(
+                    {
+                    "quantity": 1,
+                    "products": {
+                        "id": id,
+                        "nome": nome,
+                        "preco": preco,
+                        "categoria": categoria,
+                        "imagem": imagem,
+                        "descricao" : descricao
+                        }
+                    }
+                );
+                LocalStorage.removeItemLocalStorage("cart");
+                LocalStorage.setLocalStorage("cart", arr);
+            }
+            
+        });
+
         img.src = imagem;
         title.innerText = nome;
         description.innerText = descricao;
         category.innerText = categoria;
-        price.innerText = "R$ " + preco;
+        price.innerText = preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     
         imgContainer.appendChild(img);
         tagContainer.appendChild(category);
