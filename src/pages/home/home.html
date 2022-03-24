@@ -35,6 +35,7 @@
             <button class="filters"><span class="filters--fruits"></span>Frutas</button>
             <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
         </section>
+
         <section class="showcase" id="showcase"></section>
         
         <aside class="asideCart">
@@ -51,5 +52,13 @@
     </main>
 
     <button class="cartMobileButton"><span class="cartMobileButton--ico"></span>Carrinho</button>
+
+    <script type="module">
+        import {InterfaceHome} from "../../../src/controllers/interfaceHome.js";
+        import {ApiProductPublic} from "../../../src/models/apiProductPublic.js";
+
+        await ApiProductPublic.list();
+        InterfaceHome.templateShowcase(ApiProductPublic.dataProduct);
+    </script>
 </body>
 </html>
