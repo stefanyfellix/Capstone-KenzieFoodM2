@@ -13,7 +13,7 @@ InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
 
 const addProductButton = document.getElementById('addProduct');
 addProductButton.addEventListener('click', () => {
-  InterfaceDashboard.showModal(0);
+  InterfaceDashboard.registerModal();
 });
 
 const btnAll    = document.getElementById('BtnAll')
