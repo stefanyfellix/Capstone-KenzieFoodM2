@@ -138,7 +138,7 @@ span{
   resize: none;
   overflow: hidden;
   font-family: var(--font-secondary);
-  height: 100px;
+  line-height: 20px;
 }
 
 .modal--wrapper > form > textarea::placeholder{
@@ -153,7 +153,7 @@ span{
   border: 1.5px solid var(--grey-2);
   color: var(--grey-3);
   margin: 0 10px;
-  padding: 15px;
+  padding:2px 15px;
 }
 
 .modal--wrapper > form > input:focus,
@@ -197,7 +197,8 @@ label{
   display: none;
 }
 
-.wrong--price{
+.wrong--price,
+.wrong--category{
   color: var(--color-primary);
   margin:3px 20px 10px;
 }

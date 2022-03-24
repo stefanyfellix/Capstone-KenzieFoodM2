@@ -1,22 +1,24 @@
-export class ApiProductPrivate{
+import { InterfaceDashboard } from "../controllers/interfaceDashboard.js";
+
+export class ApiProductPrivate {
 
     static dataProductPrivate
-    static async list(token){
-        const response          = await fetch(`https://kenzie-food-api.herokuapp.com/my/products`, {
-            method: "GET", 
+    static async list(token) {
+        const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/products`, {
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
-                }
+            }
         });
 
-        const responseData      = await response.json();
+        const responseData = await response.json();
 
         //O Retorno é um array de objetos com os produtos
         ApiProductPrivate.dataProductPrivate = responseData;
     }
 
-    static async create(data, token){
+    static async create(data, token) {
 
         const response = await fetch("https://kenzie-food-api.herokuapp.com/my/products", {
             method: "POST",
@@ -25,16 +27,23 @@ export class ApiProductPrivate{
                 Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify(data),
-            });
-        
-            const responseData = await response.json();
-            //SE O TOKEN FOR INVÁLIDO --> {message: 'Token Invalido'}
-            //SE O DATA FOR INCOMPLETO --> {error: 'Campo de <campo que faltou> obrigátorio'}
-            //SE O TOKEN E O DATA FOREM VÁLIDOS --> cria o produto retornando um objeto com suas infos
-            return responseData;
+        });
+
+        const responseData = await response.json();
+        //SE O TOKEN FOR INVÁLIDO --> {message: 'Token Invalido'}
+        //SE O DATA FOR INCOMPLETO --> {error: 'Campo de <campo que faltou> obrigátorio'}
+        //SE O TOKEN E O DATA FOREM VÁLIDOS --> cria o produto retornando um objeto com suas infos
+
+        if (!responseData.error) {
+            InterfaceDashboard.statusMessageModal(201)
+        } else {
+            InterfaceDashboard.statusMessageModal(0)
+        }
+
+        return responseData;
     }
 
-    static async edit(data, token, id){
+    static async edit(data, token, id) {
         const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/products/${id}`, {
             method: "PATCH", // Indica o tipo de requisição GET, POST, PATCH, DELETE
             headers: {
@@ -42,7 +51,7 @@ export class ApiProductPrivate{
                 Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify(data),
-            })
+        })
 
         const responseData = await response.json();
 
@@ -50,14 +59,14 @@ export class ApiProductPrivate{
         return responseData;
     }
 
-    static async delete(token, id){
+    static async delete(token, id) {
         const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/products/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`
             }
-            })
+        })
 
         //Verificar o response.ok (se true, deletou corretamente)
         return response

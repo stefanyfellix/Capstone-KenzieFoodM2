@@ -232,7 +232,7 @@ td, th{
     font-weight: var(--font-regular);
     display: flex;
     justify-content: flex-end;
-    flex-direction: row-reverse;
+    align-items: center;
     gap: 15px;
 }
 .img--products{
@@ -245,6 +245,9 @@ td, th{
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
     font-weight: var(--font-regular);
+}
+td{
+    vertical-align: middle;
 }
 .icon{
     background-color: var(--grey-1);

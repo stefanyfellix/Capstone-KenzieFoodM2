@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -302,5 +306,175 @@ body{
 
 }
 
+.showcase{
+    width: 100%;
+    max-width: 1300px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-left: 43px;
+}
+
+.showcase--card{
+    width: 95%;
+    max-width: 303px;
+    height: 397px;
+    padding: 10px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 50px;
+    margin-right: 43px;
+}
+
+.showcase--card:hover{
+    box-shadow: 0px 5px 15px #FF2253;
+    font-size: 2rem !important;
+}
+
+.showcase--card:hover .card--description{
+    color: #212529;
+}
+
+.showcase--card:hover img{
+    border-color: #FF2253;
+}
+
+.showcase--card:hover .card--description::-webkit-scrollbar-thumb {
+    background-color: #FF2253;
+  }
+
+.card--imgContainer{
+    width: 100%;
+    height: 200px;
 
 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--imgContainer img{
+    width: 100%;
+    height: 100%;
+    border: 3px solid #FFE9EE;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card--title{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    color: #000000;
+
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.card--description, .card--tag{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868E96;
+}
+
+.card--description{
+    max-height: 64px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #FFE9EE #FFFFFF;
+
+    margin-bottom: 20px;
+}
+  
+  /* Works on Chrome, Edge, and Safari */
+  .card--description::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .card--description::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+  
+  .card--description::-webkit-scrollbar-thumb {
+    background-color: #FFE9EE;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+  }
+
+.card--tagContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card--tag{
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 19px;
+}
+
+.card--tag:last-child{
+    margin-right: 0px;
+}
+
+.card--divContainer{
+    width: 100%;
+    padding-right: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--price{
+    min-height: 38px;
+    height: 38px !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212529;
+}
+
+.card--addCart{
+    width: 38px;
+    height: 38px;
+    border-radius: 50px;
+    background-color: #E4F7EF;
+
+    font-family: FontAwesome;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 14px;
+    color: #0CA678;
+}
+
+.card--addCart::after{
+    content: '\f217';
+}
+
+.card--addCart:hover{
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #0CA678;
+    color: #FFFFFF;
+}

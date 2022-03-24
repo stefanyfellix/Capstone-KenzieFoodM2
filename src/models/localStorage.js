@@ -1,25 +1,22 @@
 import { ApiAuthentication } from "./apiAuthentication.js";
 
 export class LocalStorage {
-  static setLocalStorage(userInfo) {
-    const authentication = JSON.stringify(userInfo);
-    localStorage.setItem("authentication", authentication);
+  static setLocalStorage(key, userInfo) {
+    const userInfoJson = JSON.stringify(userInfo);
+    localStorage.setItem(key, userInfoJson);
   }
 
-  static removeItemLocalStorage() {
-    localStorage.removeItem("authentication");
+  static removeItemLocalStorage(key) {
+    localStorage.removeItem(key);
   }
 
-  static getLocalStorage() {
-    const lg = localStorage.getItem("authentication");
+  static getLocalStorage(key) {
+    const lg = localStorage.getItem(key);
     if (lg) {
-
       const lgFormatado = JSON.parse(lg);
-      ApiAuthentication.userToken = lgFormatado;
-      return ApiAuthentication.userToken;
-
+      return lgFormatado;
     } else {
-      return [];
+      return false;
     }
   }
 }

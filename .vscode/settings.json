@@ -4,7 +4,12 @@
         "ApiProductPublic",
         "ApiProductPrivate",
         "ApiCart",
+<<<<<<< HEAD
         "LocalStorage",
         "home"
+=======
+        "home",
+        "interfaceHome"
+>>>>>>> feature/showcase-home
     ]
 }
