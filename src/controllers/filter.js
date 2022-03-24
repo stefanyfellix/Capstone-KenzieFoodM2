@@ -9,15 +9,15 @@ export class Filter{
         const dataPublic  = ApiProductPublic.dataProductPublic
         const dataPrivate = ApiProductPrivate.dataProductPrivate
         if(permission === 'public'){
-            const listSection = dataPublic.filter((element) => {
+            const listSectionPublic = dataPublic.filter((element) => {
                 return element.categoria === category
             })
-            InterfaceHome.templateShowcase(listSection)
+            InterfaceHome.templateShowcase(listSectionPublic)
         }else if(permission === "private"){
-            const listSection = dataPrivate.filter((element) => {
+            const listSectionPrivate = dataPrivate.filter((element) => {
                 return element.categoria === category
             })
-            InterfaceHome.templateShowcase(listSection)
+            InterfaceHome.templateShowcase(listSectionPrivate)
         }
     }
     
@@ -28,13 +28,20 @@ export class Filter{
         InterfaceDashboard.renderTable(listSection)
     }
 
-    static filterName(arr){
+    static filterName(permission){
         const name  = document.getElementById('searchInput')
         const value = name.value.toLowerCase()
 
-        const listName = arr.filter((element)=>{
-            return element.nome.toLowerCase().includes(value)
-        })
-        InterfaceDashboard.renderTable(listName)
+        if(permission === 'public'){
+            const listNamePublic = ApiProductPublic.dataProductPublic.filter((element)=>{
+                return element.nome.toLowerCase().includes(value)
+            })
+            InterfaceDashboard.renderTable(listNamePublic)
+        }else if(permission === "private"){
+            const listNamePrivate = ApiProductPrivate.dataProductPrivate.filter((element)=>{
+                return element.nome.toLowerCase().includes(value)
+            })
+            InterfaceDashboard.renderTable(listNamePrivate)
+        }
     }
 }

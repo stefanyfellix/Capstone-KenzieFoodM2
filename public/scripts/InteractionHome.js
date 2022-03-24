@@ -3,6 +3,11 @@ import { InterfaceHome } from '../../src/controllers/interfaceHome.js';
 import {Filter} from '../../src/controllers/filter.js'
 
 
+const inputSearch = document.getElementById('searchInput')
+inputSearch.addEventListener('keydown', (event)=>{
+  const code = event.key
+  Filter.filterName('public')
+})
 const btnhomeAll = document.getElementById('BtnHomeAll')
 btnhomeAll.addEventListener('click', ()=>{
     InterfaceHome.templateShowcase(ApiProductPrivate.dataProductPrivate)
