@@ -7,12 +7,12 @@ body {
     height: 100vh;
     padding: 0px 5px;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(180deg, #FFE9EE, #FF2253);
+    background: linear-gradient(180deg, var(--color-primary-50), var(--color-primary));
 }
 
 .login{
@@ -33,14 +33,14 @@ body {
 .login h2{
     width: 100%;
     height: 60px;
-    background-color: #FF2253;
+    background-color: var(--color-primary);
     border-radius: 15px 15px 0px 0px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-weight: 700;
+    font-weight: var(--font-bold);
     font-size: 1.5rem;
     text-transform: uppercase;
     text-shadow: 2px 2px 2px #000000;
@@ -72,14 +72,14 @@ body {
 
     margin-top: 10px;
 
-    color: #FF2253;
-    font-size: 14px;
+    color: var(--color-primary);
+    font-size: var(--normal-font-size);
 
 }
 
 label{
     width: 100%;
-    font-weight: 700;
+    font-weight: var(--font-bold);
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
@@ -91,32 +91,32 @@ input {
     text-align: left;
     border-radius: 12px;
     border: 1.5px solid #DEE2E6;
-    background-color: #F8F9FA;
+    background-color: var(--grey-1);
     padding: 10px;
 }
 
 input:focus{
     outline-width: 1.5px;
-    outline-color: #FF2253;
+    outline-color: var(--color-primary);
     background-color: #FFFFFF;
 }
 
 #submitLoginInfo {
     height: 48px;
     width: 50%;
-    background-color: #F8F9FA;
+    background-color: var(--grey-1);
     border: none;
     border-radius: 32px;
     margin-bottom: 40px;
 
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
 
 }
 
 #submitLoginInfo:hover{
     color: #ffffff;
-    background-color: #FF2253;
+    background-color: var(--color-primary);
     cursor: pointer;
 }
 
@@ -131,17 +131,11 @@ form p{
 
 a {
     text-decoration: none;
-    color: #FF2253;
+    color: var(--color-primary);
     
 }
 
 .hide {
     display: none !important;
 }
-
-.show {
-
-}
-
-
 
