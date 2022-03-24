@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../../../public/css/reset.css">
     <link rel="stylesheet" href="home.css">
-
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/0c9a104220.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
@@ -30,10 +29,10 @@
 
     <div class="container">
         <section class="filtersContainer">
-            <button class="filters filters--all">Todos</button>
-            <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
-            <button class="filters"><span class="filters--fruits"></span>Frutas</button>
-            <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
+            <button class="filters filters--all" id="BtnHomeAll">Todos</button>
+            <button class="filters" id="BtnHomeBreads"> <span class="filters--bread"></span> Panificadora</button>
+            <button class="filters" id="BtnHomeFruits"><span class="filters--fruits"></span>Frutas</button>
+            <button class="filters" id="BtnHomeDrinks"><span class="filters--drinks"></span>Bebidas</button>
         </section>
 
         <main class="main" id="main">
@@ -65,5 +64,6 @@
     <button class="cartMobileButton" id="openCart"><span class="cartMobileButton--ico"></span>Carrinho</button>
 
     <script src="home.js" type="module"></script>
+    <script type="module" src="./../../../public/scripts/InteractionHome.js"></script>
 </body>
 </html>

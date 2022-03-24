@@ -13,7 +13,48 @@ export class InterfaceDashboard {
         rowBody.setAttribute('class', 'rowBody')
         const Tablebody = document.getElementById('bodyTable-product')
 
-        rowBody.innerHTML = `
+        const imgContainer = document.createElement("td");
+        const img = document.createElement("img");
+        const name = document.createElement("p");
+        const categoryTd = document.createElement("td");
+        const descriptionTd = document.createElement("td");
+        const buttonContainer = document.createElement("td");
+        const editButton = document.createElement("button");
+        const deleteButton = document.createElement("button");
+
+        imgContainer.classList.add("img_name");
+        img.classList.add("imgProducts");
+        categoryTd.classList.add("tableTd");
+        descriptionTd.classList.add("tableTd");
+        editButton.classList.add("icon");
+        deleteButton.classList.add("icon");
+
+        img.src = Img;
+        name.innerText = nameProduct;
+        categoryTd.innerText = category;
+        descriptionTd.innerText = description;
+        editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
+        deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+
+        imgContainer.appendChild(img);
+        imgContainer.appendChild(name);
+        buttonContainer.appendChild(editButton);
+        buttonContainer.appendChild(deleteButton);
+
+        rowBody.appendChild(imgContainer);
+        rowBody.appendChild(categoryTd);
+        rowBody.appendChild(descriptionTd);
+        rowBody.appendChild(buttonContainer);
+
+        editButton.addEventListener('click', () => {
+            InterfaceDashboard.showModal(1, id)
+        });
+
+        deleteButton.addEventListener('click', () => {
+            InterfaceDashboard.deleteModal(id)
+        });
+
+        /*rowBody.innerHTML = `
     <td class="img_name">
     <img class="imgProducts" src="${Img}">
     ${nameProduct}
@@ -21,18 +62,16 @@ export class InterfaceDashboard {
     <td class="tableTd">${category}</td>
     <td class="tableTd">${description}</td>
     <td>
-    <button class="icon showEditModal"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="icon showDeleteModal"><i class="fa-solid fa-trash"></i></button>
+    <button class="icon"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button class="icon"><i class="fa-solid fa-trash"></i></button>
     </td>
     `
-        const btnShowEditModal = document.querySelectorAll('.showEditModal')
-        const btnDeleteModal   = document.querySelectorAll('.showDeleteModal')
-
-        Tablebody.appendChild(rowBody)
+    */
+        Tablebody.appendChild(rowBody);
 
     }
 
-    static async renderTable(arr) {
+    static renderTable(arr) {
         const Tablebody = document.getElementById('bodyTable-product')
         Tablebody.innerHTML = ""
         arr.forEach(product => {
@@ -44,7 +83,6 @@ export class InterfaceDashboard {
 
             InterfaceDashboard.templateTable(img, nameProduct, category, description, id)
         });
-
     }
 
     static showModal(whichModal, id) {
