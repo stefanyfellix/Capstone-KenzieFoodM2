@@ -73,8 +73,7 @@ export class UserInteraction {
     //Esse erro indica se o usuário não existe ou se a senha está incorreta, que tal fazer uma tratativa para cada? 
     if (response.error){
       const errorMessage = document.getElementById("errorMessage");
-      errorMessage.classList.remove('hide');
-      errorMessage.classList.add("show");
+      errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else{
       window.open("../home/home.html", "_self");
     }
