@@ -77,6 +77,30 @@ export class UserInteraction {
       errorMessage.classList.add("show");
     }
   }
+
+  static async getDataUser(event){
+    event.preventDefault()
+
+    const inputs = event.target
+    const dataUser = {}
+    
+    for (let i = 0; i < inputs.length; i++){
+        if (inputs[i].name){
+          dataUser[inputs[i].name] = inputs[i].value
+        }
+        inputs[i].value = "";
+    }
+
+    const response = await ApiAuthentication.signUp(dataUser);
+
+    if (response === "User Already Exists!"){
+      const errorMessage = document.getElementById('errorMessage')
+      errorMessage.classList.remove('hide')
+      errorMessage.classList.add("show")
+    } else{
+      window.open("../login/login.html", "_self");
+    }
+  }
 }
 
 

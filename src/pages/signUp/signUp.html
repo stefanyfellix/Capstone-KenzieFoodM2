@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signUp.css">
+    <title>Cadastro</title>
+</head>
+  <body>
+      <div class="signUp">
+          <h1>Cadastro</h1>
+          <p id="errorMessage" class="hide">Usuário já cadastrado. Faça login ou tente novamente com outro e-mail.</p>
+          <form id="signUpForm" action="submit">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="nome" placeholder="Nome de usuário">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="senha" placeholder="Senha">
+            <button type="submit" id="submitSignUpInfo">Cadastrar</button>
+            <a href="./../login/login.html">Já possuo cadastro</a>
+          </form>
+        </div>
+    <script type="module">
+      import { UserInteraction } from "../../../src/controllers/userInteraction.js";
+
+      const signUpForm = document.getElementById('signUpForm');
+      signUpForm.addEventListener("submit", UserInteraction.getDataUser);
+    </script>
+  </body>
+</html>

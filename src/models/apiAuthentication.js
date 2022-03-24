@@ -17,7 +17,7 @@ export class ApiAuthentication{
         //Se usuário já existe --> {status: 'Error', message: 'User Already Exists!'}
         //Se usuário não existe --> {createdAt: "2022-03-22T12:35:31.068Z", email: "equipe1-teste2@gmail.com", id: 32, name: "equipe1-teste2", password: "$2a$08$3Pg1qyuXNs5k8lv0iZrYMuC3kPlZTbVUc.4vkb7LG3EvD.bSxx4OK", updatedAt: "2022-03-22T12:35:31.068Z"}
 
-        const responseData  = await response.json();
+        const responseData  = await response.json();        
         return responseData;
     }
 
