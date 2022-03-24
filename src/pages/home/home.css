@@ -93,19 +93,37 @@ body{
     outline: 1.5px solid #212529;
 }
 
-.header--button{
-    position: absolute;
-    top: 0px;
-    right: -100px;
-    width: 88px;
+.header--dashboardButton{
+    width: 80px;
+    height: 48px;
+
+    background-color: #FF2253;
+    border-color: #FF2253;
+    border-radius: 30px;
+    color: #F8F9FA;;
+}
+
+.header--logoutButton{
+    width: 80px;
     height: 48px;
 
     background-color: #FF2253;
     border-color: #FF2253;
     border-radius: 30px;
     color: #F8F9FA;
+    cursor: pointer;
 }
 
+.header--loginButton{
+    width: 80px;
+    height: 48px;
+
+    background-color: #FF2253;
+    border-color: #FF2253;
+    border-radius: 30px;
+    color: #F8F9FA;
+    cursor: pointer;
+}
 .header--ico{
     font-family: FontAwesome;
     position: absolute;
@@ -120,7 +138,6 @@ body{
     content: "\f002";
     color: #868E96;
 }
-
 .container{
     width: 100%;
     padding-left: 20px;

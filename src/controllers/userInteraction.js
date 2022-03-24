@@ -76,7 +76,6 @@ export class UserInteraction {
       const errorMessage = document.getElementById("errorMessage");
       errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else{
-      InterfaceHome.transitionPages(response)
       window.open("../home/home.html", "_self");
 
     }
