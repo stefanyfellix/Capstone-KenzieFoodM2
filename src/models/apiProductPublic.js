@@ -1,6 +1,6 @@
- export class ApiProductPublic {
+export class ApiProductPublic {
     
-    static dataProduct 
+    static dataProductPublic
     static async list(){
         const response          = await fetch(`https://kenzie-food-api.herokuapp.com/products`, {
             method: "GET", 
@@ -11,7 +11,6 @@
         
         const responseData      = await response.json();
 
-        //A variável recebe como valor o array 
-        ApiProductPublic.dataProduct = responseData;
+        ApiProductPublic.dataProductPublic = responseData
     }
 }

@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../../../public/css/reset.css">
     <link rel="stylesheet" href="home.css">
-
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/0c9a104220.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
@@ -28,31 +27,43 @@
         </div>
     </header>
 
-    <main class="main">
+    <div class="container">
         <section class="filtersContainer">
-            <button class="filters filters--all">Todos</button>
-            <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
-            <button class="filters"><span class="filters--fruits"></span>Frutas</button>
-            <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
+            <button class="filters filters--all" id="BtnHomeAll">Todos</button>
+            <button class="filters" id="BtnHomeBreads"> <span class="filters--bread"></span> Panificadora</button>
+            <button class="filters" id="BtnHomeFruits"><span class="filters--fruits"></span>Frutas</button>
+            <button class="filters" id="BtnHomeDrinks"><span class="filters--drinks"></span>Bebidas</button>
         </section>
 
-        <section class="showcase" id="showcase"></section>
-        
-        <aside class="asideCart">
-            <header class="headAsideCart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p class="pCartAside">Carrinho</p>
-            </header>
-            <div class="section-itensAside">
-                <i id="icon-cartAside"class="fa-solid fa-bag-shopping"></i>
-                <p>Por enquanto não temos produto no carrinho</p>
-            </div>
-        </aside>
+        <main class="main" id="main">
+            <section class="showcase" id="showcase"></section>
+            
+            <aside class="asideCart" id="asideCart">
+                <header class="headAsideCart">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                    <p class="pCartAside">Carrinho</p>
+                </header>
+                <div class="section-itensAside cartEmpty" id="cartBody">
+                    <i id="icon-cartAside"class="fa-solid fa-bag-shopping"></i>
+                    <p>Por enquanto não temos produto no carrinho</p>
+                </div>
+                <div class="infosCart infosCart__displayNone" id="infosCart">
+                    <div class="infosCart--quantityContainer">
+                        <p>Quantidade</p>
+                        <span id="quantityCart">0</span>
+                    </div>
+                    <div class="infosCart--totalContainer">
+                        <p>Total</p>
+                        <span id="totalCart">0</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
 
-    </main>
-
-    <button class="cartMobileButton"><span class="cartMobileButton--ico"></span>Carrinho</button>
+    <button class="cartMobileButton" id="openCart"><span class="cartMobileButton--ico"></span>Carrinho</button>
 
     <script src="home.js" type="module"></script>
+    <script type="module" src="./../../../public/scripts/InteractionHome.js"></script>
 </body>
 </html>

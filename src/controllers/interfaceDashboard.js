@@ -29,13 +29,11 @@ export class InterfaceDashboard {
         Tablebody.appendChild(rowBody)
     }
 
-    static async renderTable() {
+    static async renderTable(arr) {
         const Tablebody = document.getElementById('bodyTable-product')
         Tablebody.innerHTML = ""
 
-        await ApiProductPrivate.list(token)
-
-        ApiProductPrivate.dataProductPrivate.forEach(product => {
+        arr.forEach(product => {
             const img = product.imagem
             const nameProduct = product.nome
             const category = product.categoria

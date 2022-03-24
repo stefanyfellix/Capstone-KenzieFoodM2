@@ -54,7 +54,8 @@ export class UserInteraction {
     }
 
     setTimeout(async () => {
-      await InterfaceDashboard.renderTable()
+      await ApiProductPrivate.list(token)
+      await InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
     }, 1000)
   }
 
@@ -91,8 +92,9 @@ export class UserInteraction {
       this.categoryValue = ''
     }
 
-    setTimeout(() => {
-      InterfaceDashboard.renderTable()
+    setTimeout(async () => {
+      await ApiProductPrivate.list(token)
+      await InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
     }, 1000)
   }
 
@@ -101,7 +103,8 @@ export class UserInteraction {
     await ApiProductPrivate.delete(token, id)
 
     setTimeout(async () => {
-      await InterfaceDashboard.renderTable()
+      await ApiProductPrivate.list(token)
+      await InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
     }, 1000)
   }
 
@@ -122,10 +125,9 @@ export class UserInteraction {
     //Esse erro indica se o usuário não existe ou se a senha está incorreta, que tal fazer uma tratativa para cada? 
     if (response.error) {
       const errorMessage = document.getElementById("errorMessage");
-      errorMessage.classList.remove('hide');
-      errorMessage.classList.add("show");
+      errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else {
-      window.open("../../admin/admin.html", "_self");
+      window.open("../home/home.html", "_self");
     }
   }
 
@@ -144,10 +146,11 @@ export class UserInteraction {
 
     const response = await ApiAuthentication.signUp(dataUser);
 
+    const errorMessage = document.getElementById('errorMessage');
     if (response === "User Already Exists!") {
-      const errorMessage = document.getElementById('errorMessage')
-      errorMessage.classList.remove('hide')
-      errorMessage.classList.add("show")
+      errorMessage.innerHTML = "Usuário já existe<span>Tente se cadastrar com outro email ou faça seu login.";
+    } else if (response.status === 'Error') {
+      errorMessage.innerHTML = "Todos os campos precisam ser preenchidos corretamente.";
     } else {
       window.open("../login/login.html", "_self");
     }
