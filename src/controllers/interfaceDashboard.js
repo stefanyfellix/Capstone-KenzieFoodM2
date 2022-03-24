@@ -212,9 +212,9 @@ export class InterfaceDashboard {
             saveEditedProduct.type = 'submit'
             saveEditedProduct.id = 'saveProductChange'
             saveEditedProduct.innerText = 'Salvar Aterações'
-            saveEditedProduct.addEventListener('submit', () => {
+            saveEditedProduct.addEventListener('submit', (event) => {
                 modal.classList.add('hidden')
-                UserInteraction.editProduct(token, id, event)
+                UserInteraction.editProduct(event, token, id)
 
             })
             span.appendChild(saveEditedProduct)
@@ -243,8 +243,8 @@ export class InterfaceDashboard {
         const acceptDelete = document.createElement('button')
         acceptDelete.classList.add('deleteModalButton')
         acceptDelete.innerText = 'Sim'
-        acceptDelete.addEventListener('click', () => {
-            UserInteraction.deleteProduct(token, id, event)
+        acceptDelete.addEventListener('click', (event) => {
+            UserInteraction.deleteProduct(event, token, id)
             deleteModal.classList.add('hidden')
         })
         confirmationButtons.appendChild(acceptDelete)

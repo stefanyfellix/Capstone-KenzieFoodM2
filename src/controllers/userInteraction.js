@@ -28,7 +28,7 @@ export class UserInteraction {
     }
   }
 
-  static editProduct(token, id, event) {
+  static editProduct(event, token, id) {
     event.preventDefault()
 
     const inputs = event.target
@@ -51,7 +51,7 @@ export class UserInteraction {
     }
   }
 
-  static deleteProduct(token, id, event) {
+  static deleteProduct(event, token, id) {
     event.preventDefault()
     ApiProductPrivate.delete(token, id)
   }
