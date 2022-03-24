@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/global.css">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./modais.css">
+
+    <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header--logo">Kenzie <span>Food</span></h1>
+        <div>
+            <input class="header--search" type="text" placeholder="Pesquisar por produto" id="searchInput">
+            <span class="header--ico"></span>
+            <img src="../../../img/Frame 1.jpg" alt="Usuário">
+        </div>
+    </header>
+
+    <main>
+        <section class="buttonsContainer">
+            <button class="buttons--addProduct">Adicionar produto</button>
+            <section class="filtersContainer">
+                <button class="filters filters--all">Todos</button>
+                <button class="filters"> <span class="filters--bread"></span> Panificadora</button>
+                <button class="filters"><span class="filters--fruits"></span>Frutas</button>
+                <button class="filters"><span class="filters--drinks"></span>Bebidas</button>
+            </section>
+        </section>
+
+        <div class="table" id="table">
+    
+            <table class="table-product">
+                <thead id="headTable-product" class="headTable-product">
+                    <tr id="head-data" class="head-data">
+                        <th id="product-table">Produto</th>
+                        <th id="category-table">Categoria</th>
+                        <th id="description-table">Descrições</th>
+                        <th id="actions-table">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable-product"></tbody>
+            </table>
+    
+        </div>
+    </main>
+
+
+    <script type="module" src="./../../../public/scripts/script.js"></script>
+</body>
+
+</html>
