@@ -21,14 +21,14 @@ export class InterfaceDashboard {
     <td class="tableTd">${category}</td>
     <td class="tableTd">${description}</td>
     <td>
-    <button class="icon showEditModal"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="icon showDeleteModal"><i class="fa-solid fa-trash"></i></button>
+    <button class="icon"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button class="icon"><i class="fa-solid fa-trash"></i></button>
     </td>
     `
         Tablebody.appendChild(rowBody)
     }
 
-    static async renderTable(arr) {
+    static renderTable(arr) {
         const Tablebody = document.getElementById('bodyTable-product')
         Tablebody.innerHTML = ""
         arr.forEach(product => {

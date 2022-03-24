@@ -11,7 +11,6 @@ export class ApiProductPublic {
         
         const responseData      = await response.json();
 
-        this.dataProductPublic  = responseData
+        ApiProductPublic.dataProductPublic = responseData
     }
-
 }

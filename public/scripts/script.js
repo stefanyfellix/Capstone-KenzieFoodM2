@@ -2,7 +2,7 @@ import { ApiProductPublic } from '../../src/models/apiProductPublic.js'
 import { InterfaceDashboard } from './../../src/controllers/interfaceDashboard.js'
 
 await ApiProductPublic.list()
-InterfaceDashboard.renderTable(ApiProductPublic.dataProduct)
+InterfaceDashboard.renderTable(ApiProductPublic.dataProductPublic)
 
 const showEditModal = document.querySelectorAll('#showEditModal')
 showEditModal.forEach((button) => {
