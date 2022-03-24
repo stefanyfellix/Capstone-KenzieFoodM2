@@ -53,12 +53,6 @@
 
     <button class="cartMobileButton"><span class="cartMobileButton--ico"></span>Carrinho</button>
 
-    <script type="module">
-        import {InterfaceHome} from "../../../src/controllers/interfaceHome.js";
-        import {ApiProductPublic} from "../../../src/models/apiProductPublic.js";
-
-        await ApiProductPublic.list();
-        InterfaceHome.templateShowcase(ApiProductPublic.dataProduct);
-    </script>
+    <script src="home.js" type="module"></script>
 </body>
 </html>

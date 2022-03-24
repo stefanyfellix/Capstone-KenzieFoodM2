@@ -37,7 +37,7 @@ export class ApiAuthentication{
 
         if (!responseData.error) {
             ApiAuthentication.userToken.token  = responseData;
-            LocalStorage.setLocalStorage(ApiAuthentication.userToken);
+            LocalStorage.setLocalStorage("authentication", ApiAuthentication.userToken);
         }
 
         return responseData;

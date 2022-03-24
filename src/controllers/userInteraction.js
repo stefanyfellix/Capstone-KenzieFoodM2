@@ -75,6 +75,8 @@ export class UserInteraction {
       const errorMessage = document.getElementById("errorMessage");
       errorMessage.classList.remove('hide');
       errorMessage.classList.add("show");
+    } else{
+      window.open("../home/home.html", "_self");
     }
   }
 
