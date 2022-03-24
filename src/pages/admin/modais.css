@@ -5,11 +5,10 @@
 
   position: absolute;
   width: 90%;
-  height: 95%;
+  height: auto;
 
   background-color: #fff;
   border-radius: 8px 8px 8px 8px;
-  margin: 20px auto;
 }
 
 .modal--screen{
@@ -21,6 +20,11 @@
   justify-content: center;
 
   background-color: rgba(0,0,0,0.5);
+  overflow-y: auto;
+}
+
+#registerProductForm{
+  padding-bottom: 10px;
 }
 
 .status--modal{
@@ -206,7 +210,7 @@ label{
 @media screen and (min-width: 768px){
   .modal--wrapper{
     width: 60%;
-    height: 90%;
+    height: auto;
   }
 
   .status--modal{
@@ -259,7 +263,7 @@ label{
 
 @media screen and (min-width: 1024px){
   .modal--wrapper{
-    height: 90%;
+    height: auto;
     width: 40%;
   }
 

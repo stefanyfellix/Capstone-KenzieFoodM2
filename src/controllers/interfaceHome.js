@@ -87,6 +87,32 @@ export class InterfaceHome{
         arrayOfProducts.forEach((product) => InterfaceHome.cardShowcase(product));
     }
 
+    static transitionPages (response){
+        const header = document.querySelector("header")
+        if (response === "private"){
+            const btnLogout = document.createElement('button')
+            btnLogout.classList.add('header--logoutButton')
+
+            const btnDashboard = document.createElement('button')
+            btnDashboard.classList.add("header--dashboardButton")
+            btnLogout.innerText = "Logout"
+            btnDashboard.innerHTML = `<a href="./../admin/admin.html">Dashboard</a>`
+            btnLogout.addEventListener("click", () =>{
+                LocalStorage.removeItemLocalStorage("authentication")
+                location.reload()
+                });
+            header.appendChild(btnLogout)
+            header.appendChild(btnDashboard)
+            console.log("tchau")
+        } else if(response==="public"){
+            const btnLogin = document.createElement('button')
+            btnLogin.classList.add('header--logoutButton')
+            btnLogin.innerHTML   = `<a href="./../login/login.html">Login</a>`
+            header.appendChild(btnLogin)
+            console.log("oi")
+        }
+    }
+
     static cardCart(id, nome, preco, categoria, imagem){
         const cartBody = document.getElementById("cartBody");
 
