@@ -10,6 +10,11 @@ await ApiProductPrivate.list(tokenAcess.token);
 console.log(ApiProductPrivate.dataProductPrivate)
 InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
 
+const inputSearch = document.getElementById('searchInput')
+inputSearch.addEventListener('keydown', (event)=>{
+  const code = event.key
+  Filter.filterName('private', "admin")
+})
 
 const addProductButton = document.getElementById('addProduct');
 addProductButton.addEventListener('click', () => {

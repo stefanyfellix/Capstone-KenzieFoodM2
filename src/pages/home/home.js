@@ -26,6 +26,17 @@ if (authentication){
 const openCart = document.getElementById("openCart");
 openCart.addEventListener('click', InterfaceHome.modalCart);
 
+
+const inputSearch = document.getElementById('searchInput')
+inputSearch.addEventListener('keydown', (event)=>{
+  const code = event.key
+  if (authentication){
+    Filter.filterName('private', "home");
+  } else{
+    Filter.filterName('public', "home");
+  }
+})
+
 const btnhomeAll = document.getElementById('BtnHomeAll')
 btnhomeAll.addEventListener('click', ()=>{
     if (authentication){

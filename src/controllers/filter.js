@@ -29,13 +29,33 @@ export class Filter {
         InterfaceDashboard.renderTable(listSection)
     }
 
-    static filterName(arr) {
-        const name = document.getElementById('searchInput')
+    static filterName(permission, page){
+        const name  = document.getElementById('searchInput')
         const value = name.value.toLowerCase()
+        console.log(value)
 
-        const listName = arr.filter((element) => {
-            return element.nome.toLowerCase().includes(value)
-        })
-        InterfaceDashboard.renderTable(listName)
+        if(permission === 'public'){
+            console.log(ApiProductPublic.dataProductPublic)
+            const listNamePublic = ApiProductPublic.dataProductPublic.filter((element)=>{
+                return element.nome.toLowerCase().includes(value)
+            })
+            console.log(listNamePublic)
+            if (page === 'home'){
+                InterfaceHome.templateShowcase(listNamePublic)
+            } else if (page === 'admin'){
+                InterfaceDashboard.renderTable(listNamePublic)
+            }
+        }else if(permission === "private"){
+            console.log(ApiProductPublic.dataProductPublic)
+            const listNamePrivate = ApiProductPrivate.dataProductPrivate.filter((element)=>{
+                return element.nome.toLowerCase().includes(value)
+            })
+
+            if (page === 'home'){
+                InterfaceHome.templateShowcase(listNamePrivate)
+            } else if (page === 'admin'){
+                InterfaceDashboard.renderTable(listNamePrivate)
+            }
+        }
     }
 }
