@@ -127,7 +127,7 @@ export class UserInteraction {
       const errorMessage = document.getElementById("errorMessage");
       errorMessage.innerHTML = "Usuário e/ou senha inválidos. <span>Tente novamente ou faça seu cadastro.";
     } else {
-      window.open("../home/home.html", "_self");
+      window.open("../../../index.html", "_self");
 
     }
   }
