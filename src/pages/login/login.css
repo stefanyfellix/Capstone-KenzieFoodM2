@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(180deg, var(--color-primary-50), var(--color-primary));
+    background: linear-gradient(180deg, var(--color-primary-59), var(--color-primary));
 }
 
 .login{

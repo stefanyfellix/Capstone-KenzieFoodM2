@@ -16,6 +16,8 @@ inputSearch.addEventListener('keydown', (event)=>{
   Filter.filterName('private', "admin")
 })
 
+const filterAll = document.querySelectorAll(".filters");
+
 const addProductButton = document.getElementById('addProduct');
 addProductButton.addEventListener('click', () => {
   InterfaceDashboard.registerModal();
@@ -24,16 +26,20 @@ addProductButton.addEventListener('click', () => {
 const btnAll    = document.getElementById('BtnAll')
 btnAll.addEventListener('click', ()=>{
     InterfaceDashboard.renderTable(ApiProductPrivate.dataProductPrivate)
+    filterAll[0].classList.remove("filters--all")
 })
 const btnBakery = document.getElementById('Btnbakery')
 btnBakery.addEventListener('click', ()=>{
   Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Panificadora')
+  filterAll[0].classList.remove("filters--all")
 })
 const btnFruits = document.getElementById('Btnfruits')
 btnFruits.addEventListener('click', ()=>{
   Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Frutas')
+  filterAll[0].classList.remove("filters--all")
 })
 const btnDrinks = document.getElementById('Btndrinks')
 btnDrinks.addEventListener('click', ()=>{
   Filter.filterDashboardBtn(ApiProductPrivate.dataProductPrivate, 'Bebidas')
+  filterAll[0].classList.remove("filters--all")
 })

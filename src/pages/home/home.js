@@ -26,6 +26,7 @@ if (authentication){
 const openCart = document.getElementById("openCart");
 openCart.addEventListener('click', InterfaceHome.modalCart);
 
+const filterAll = document.querySelectorAll(".filters");
 
 const inputSearch = document.getElementById('searchInput')
 inputSearch.addEventListener('keydown', (event)=>{
@@ -44,6 +45,8 @@ btnhomeAll.addEventListener('click', ()=>{
     } else{
         InterfaceHome.templateShowcase(ApiProductPublic.dataProductPublic)
     }
+
+    filterAll[0].classList.remove("filters--all")
 })
 const btnBreads = document.getElementById('BtnHomeBreads');
 btnBreads.addEventListener('click', ()=>{
@@ -53,6 +56,8 @@ btnBreads.addEventListener('click', ()=>{
     } else{
         Filter.filterPermision('public', 'Panificadora');
     }
+
+    filterAll[0].classList.remove("filters--all")
     
 });
 const btnFruits = document.getElementById('BtnHomeFruits');
@@ -62,6 +67,8 @@ btnFruits.addEventListener('click', ()=>{
     } else{
         Filter.filterPermision('public', 'Frutas');
     }
+
+    filterAll[0].classList.remove("filters--all")
 })
 const btnDrinks = document.getElementById('BtnHomeDrinks');
 btnDrinks.addEventListener('click', ()=>{
@@ -70,4 +77,6 @@ btnDrinks.addEventListener('click', ()=>{
     } else{
         Filter.filterPermision('public', 'Bebidas');
     }
+
+    filterAll[0].classList.remove("filters--all")
 })

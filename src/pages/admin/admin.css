@@ -147,6 +147,7 @@ main{
     width: 170px;
 }
 
+
 .filters--all{
     width: 88px;
     height: 48px;
@@ -179,6 +180,15 @@ main{
 
 .filters:last-child{
     margin-right: 0;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.filters:focus{
+    background-color: var(--color-primary);
+    color: #FFFFFF
 }
 
 .buttons--addProduct{
@@ -255,6 +265,10 @@ td{
     border: none;
     color: var(--grey-3);
     cursor: pointer;
+}
+
+#editProductForm{
+    padding-bottom: 10px;
 }
 
 @media screen and (min-width: 760px){
