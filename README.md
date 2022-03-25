@@ -1,6 +1,6 @@
 # Entrega: Projeto Capstone
 
-##Conceitos
+## Conceitos
 OOP:
 Sintaxe de classe;
 classes estáticas.
@@ -27,7 +27,7 @@ Atualizar o preço total do carrinho, baseado nos produtos do carrinho.
 Atualizar a quantidade total de produtos no carrinho.
 
 
-##Requisitos
+## Requisitos
 Aplicar mobile first;
 Criação da página de login e register feita pela equipe deve ser uma ideia da equipe, seguindo o esquema de cores do figma;
 LocalStorage (Vocês podem implementar, no carrinho, para salvar os produtos adicionados pelo usuário e para salvar o token de acesso).
@@ -36,12 +36,12 @@ implementação das requisições referentes aos produtos e autenticação.
 Requisições a respeito do carrinho: PATH, DELETE, POST
 
 
-##Trabalhando com a API e o Front
+## Trabalhando com a API e o Front
 Na aplicação, deve ser possível fazer o register e o login de um usuário. Porém, caso o mesmo não queira se cadastrar, ele tem liberdade para navegar na página, usando a requisição pública de produtos padrões. Assim, os produtos que forem adicionados no carrinho, por esse usuário anônimo, devem se manter apenas no LocalStorage.
 
 Resumo do acesso de usuário autenticado e usuário anônimo.
 
-##Anônimo
+## Anônimo
 Entrada permitida na página Home;
 Uso apenas da requisição pública de produtos;
 Produtos adicionados devem ficar apenas no localStorage;
@@ -52,13 +52,13 @@ Listagem de produtos feita pela requisição privada do usuário;
 Produtos Adicionados ao carrinho inicialmente no localStorage, caso efetue o extra, adicionar na API;
 Acesso total a página de criação, edição e remoção de produtos.
 
-##Páginas 
+## Páginas 
 Temos no nosso trabalho 
-###Home Page
+### Home Page
 acesso a lista de produtos e carrinho. Tendo acesso a página de login.
-###Admin Page
+### Admin Page
 acesso somente a usúarios cadastrados. Acesso a lista de produtos que for criado pelo próprio usúario.Podendo também editar e excluir o produto.
-##Login e Cadastro 
+### Login e Cadastro 
 Autentica um usúario quando ele for cadastrado.
 
 
