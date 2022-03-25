@@ -59,12 +59,10 @@ body{
     color: var(--color-primary);
 }
 
-.header div{
-    width: 100%;
-    max-width: 342px;
+.header--container{
+    display: flex;
+    justify-content: flex-end;
 
-    margin-top: 36px;
-    position: relative;
 }
 
 .header a, a:visited {
@@ -94,8 +92,9 @@ body{
 }
 
 .header--dashboardButton{
-    width: 80px;
+    width: 120px;
     height: 48px;
+    margin-left: 20px;
 
     background-color: #FF2253;
     border-color: #FF2253;
@@ -104,8 +103,9 @@ body{
 }
 
 .header--logoutButton{
-    width: 80px;
+    width: 100px;
     height: 48px;
+    margin-left: 20px;
 
     background-color: #FF2253;
     border-color: #FF2253;
@@ -115,8 +115,9 @@ body{
 }
 
 .header--loginButton{
-    width: 80px;
+    width: 90px;
     height: 48px;
+    margin-left: 20px;
 
     background-color: #FF2253;
     border-color: #FF2253;
@@ -126,12 +127,12 @@ body{
 }
 .header--ico{
     font-family: FontAwesome;
-    position: absolute;
+    position: relative;
     z-index: 10;
     height: 16px;
 
     top: 17px;
-    left: 16px;
+    left: -300px;
 }
 
 .header--ico::before{

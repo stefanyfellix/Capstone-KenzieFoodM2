@@ -88,7 +88,7 @@ export class InterfaceHome{
     }
 
     static transitionPages (response){
-        const header = document.querySelector("header")
+        const header = document.querySelector(".header--container")
         if (response === "private"){
             const btnLogout = document.createElement('button')
             btnLogout.classList.add('header--logoutButton')
@@ -106,7 +106,7 @@ export class InterfaceHome{
             console.log("tchau")
         } else if(response==="public"){
             const btnLogin = document.createElement('button')
-            btnLogin.classList.add('header--logoutButton')
+            btnLogin.classList.add('header--loginButton')
             btnLogin.innerHTML   = `<a href="./../login/login.html">Login</a>`
             header.appendChild(btnLogin)
             console.log("oi")
