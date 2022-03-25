@@ -99,7 +99,7 @@ export class InterfaceHome{
             const btnDashboard = document.createElement('button')
             btnDashboard.classList.add("header--dashboardButton")
             btnLogout.innerText = "Logout"
-            btnDashboard.innerHTML = `<a href="./../admin/admin.html">Dashboard</a>`
+            btnDashboard.innerHTML = `<a href="./src/pages/admin/admin.html">Dashboard</a>`
             btnLogout.addEventListener("click", () =>{
                 LocalStorage.removeItemLocalStorage("authentication")
                 location.reload()
@@ -111,7 +111,7 @@ export class InterfaceHome{
         } else if(response==="public"){
             const btnLogin = document.createElement('button')
             btnLogin.classList.add('header--loginButton')
-            btnLogin.innerHTML   = `<a href="./../login/login.html">Login</a>`
+            btnLogin.innerHTML   = `<a href="./src/pages/login/login.html">Login</a>`
             header.appendChild(btnLogin)
             console.log("oi")
         }

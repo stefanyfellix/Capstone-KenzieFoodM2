@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Food</title>
+
+    <link rel="stylesheet" href="./public/css/reset.css">
+    <link rel="stylesheet" href="./public/css/global.css">
+    <link rel="stylesheet" href="./src/pages/home/home.css">
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/0c9a104220.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/93d72ee343.js" crossorigin="anonymous"></script>
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header--logo">Kenzie <span>Food</span></h1>
+
+        <div class="header--container">
+            <input class="header--search" type="text" placeholder="Pesquisar por produto" id="searchInput">
+            <span class="header--ico"></span>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="filtersContainer">
+            <button class="filters filters--all" id="BtnHomeAll">Todos</button>
+            <button class="filters" id="BtnHomeBreads"> <span class="filters--bread"></span> Panificadora</button>
+            <button class="filters" id="BtnHomeFruits"><span class="filters--fruits"></span>Frutas</button>
+            <button class="filters" id="BtnHomeDrinks"><span class="filters--drinks"></span>Bebidas</button>
+        </section>
+
+        <main class="main" id="main">
+            <section class="showcase" id="showcase"></section>
+
+            <aside class="asideCart" id="asideCart">
+                <header class="headAsideCart">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                    <p class="pCartAside">Carrinho</p>
+                </header>
+                <div class="section-itensAside cartEmpty" id="cartBody">
+                    <i id="icon-cartAside" class="fa-solid fa-bag-shopping"></i>
+                    <p>Por enquanto não temos produto no carrinho</p>
+                </div>
+                <div class="infosCart infosCart__displayNone" id="infosCart">
+                    <div class="infosCart--quantityContainer">
+                        <p>Quantidade</p>
+                        <span id="quantityCart">0</span>
+                    </div>
+                    <div class="infosCart--totalContainer">
+                        <p>Total</p>
+                        <span id="totalCart">0</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <button class="cartMobileButton" id="openCart"><span class="cartMobileButton--ico"></span>Carrinho</button>
+
+    <script src="./src/pages/home/home.js" type="module"></script>
+</body>
+
+</html>
