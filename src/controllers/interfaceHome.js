@@ -88,8 +88,11 @@ export class InterfaceHome{
     }
 
     static transitionPages (response){
+        const headerIcon = document.querySelector(".header--ico")
         const header = document.querySelector(".header--container")
         if (response === "private"){
+            headerIcon.classList.remove("header--ico")
+            headerIcon.classList.add("header--ico--private")
             const btnLogout = document.createElement('button')
             btnLogout.classList.add('header--logoutButton')
 
@@ -101,6 +104,7 @@ export class InterfaceHome{
                 LocalStorage.removeItemLocalStorage("authentication")
                 location.reload()
                 });
+            header.appendChild(headerIcon)
             header.appendChild(btnLogout)
             header.appendChild(btnDashboard)
             console.log("tchau")

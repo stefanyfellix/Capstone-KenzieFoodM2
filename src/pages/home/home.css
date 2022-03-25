@@ -135,6 +135,16 @@ body{
     left: -300px;
 }
 
+.header--ico--private{
+    font-family: FontAwesome;
+    position: relative;
+    z-index: 10;
+    height: 16px;
+
+    top: 17px;
+    left: -300px;
+}
+
 .header--ico::before{
     content: "\f002";
     color: var(--grey-3);
